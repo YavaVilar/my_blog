@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>my_blog - Exercices Semaine 1</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">my_blog</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../TD1.qmd" rel="" target="">
+ <span class="menu-text">Exercices semaine 1</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/" rel="" target=""><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com" rel="" target=""><i class="bi bi-twitter" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Exercices Semaine 1</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#td1" id="toc-td1" class="nav-link active" data-scroll-target="#td1">TD1</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<section id="td1" class="level2">
+<h2 class="anchored" data-anchor-id="td1">TD1</h2>
+<section id="exercise-2" class="level4">
+<h4 class="anchored" data-anchor-id="exercise-2">Exercise 2</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Renommer en data_ex</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>data_ex <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"C:/Users/yavav/Downloads/paris-2024-sites-olympiques-et-paralympiques-franciliens (1).csv"</span>, <span class="at">sep=</span><span class="st">";"</span>, <span class="at">dec=</span><span class="st">","</span>, <span class="at">quote=</span><span class="st">"</span><span class="sc">\"</span><span class="st">"</span>, <span class="at">na.strings =</span> <span class="cn">NA</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">#Noms et nature des colonnes </span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(data_ex)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   31 obs. of  4 variables:
+ $ geo_point                     : chr  "48.841319, 2.253076" "48.924388, 2.359871" "48.92467, 2.332428" "48.815115, 2.08208" ...
+ $ nom                           : chr  "Parc des Princes" "Stade de France" "Village olympique" "Château de Versailles" ...
+ $ sites_olympiques_paralympiques: chr  "Site olympique" "Site olympique,Site paralympique" "" "Site olympique,Site paralympique" ...
+ $ sports                        : chr  "Football" "Athlétisme,Para athlétisme,Rugby" "" "Sports équestres,Para équitation,Pentathlon moderne" ...</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Nombre de lignes </span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(data_ex) <span class="co">#31 lignes</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 31</code></pre>
+</div>
+</div>
+</section>
+<section id="exercise-3-combien-il-y-a-t-il-de-sites-olympiques" class="level4">
+<h4 class="anchored" data-anchor-id="exercise-3-combien-il-y-a-t-il-de-sites-olympiques">Exercise 3: Combien il y a-t-il de sites olympiques</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (value <span class="cf">in</span> data_ex<span class="sc">$</span>sites_olympiques_paralympiques) {</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (value <span class="sc">==</span> <span class="st">"Site olympique"</span> <span class="sc">|</span> value <span class="sc">==</span> <span class="st">"Site olympique,Site paralympique"</span>) {</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    x <span class="ot">&lt;-</span> x <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  } } </span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Número de Sites olympiques:"</span>, x))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Número de Sites olympiques: 26"</code></pre>
+</div>
+</div>
+</section>
+<section id="exercise-4-combien-il-y-a-t-il-de-sites-paralympiques" class="level4">
+<h4 class="anchored" data-anchor-id="exercise-4-combien-il-y-a-t-il-de-sites-paralympiques">Exercise 4: Combien il y a-t-il de sites paralympiques</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (value <span class="cf">in</span> data_ex<span class="sc">$</span>sites_olympiques_paralympiques) {</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (value <span class="sc">==</span> <span class="st">"Site paralympique"</span> <span class="sc">|</span> value <span class="sc">==</span> <span class="st">"Site olympique,Site paralympique"</span>) {</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    y <span class="ot">&lt;-</span> y <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  } } </span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Número de Sites paralympiques:"</span>, y))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Número de Sites paralympiques: 19"</code></pre>
+</div>
+</div>
+</section>
+<section id="exercise-5-quels-sont-les-sites-qui-aceuillent-plusieurs-disciplines-sportives" class="level4">
+<h4 class="anchored" data-anchor-id="exercise-5-quels-sont-les-sites-qui-aceuillent-plusieurs-disciplines-sportives">Exercise 5: Quels sont les sites qui aceuillent plusieurs disciplines sportives</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Ce code permet d'identifier le nom des sites qui aceuillent plus d'un sport</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>sites_plusieurs_sports <span class="ot">&lt;-</span> data_ex[<span class="fu">grepl</span>(<span class="st">","</span>, data_ex<span class="sc">$</span>sports), <span class="fu">c</span>(<span class="st">"nom"</span>)]</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>sites_plusieurs_sports</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "Stade de France"                                
+ [2] "Château de Versailles"                          
+ [3] "Grand Palais"                                   
+ [4] "Invalides"                                      
+ [5] "Pont d'Iéna"                                    
+ [6] "Arena Bercy"                                    
+ [7] "Arena Paris nord"                               
+ [8] "Arena Paris Sud 6 (Porte de Versailles)"        
+ [9] "Stade de la Concorde"                           
+[10] "Arena Champs de Mars"                           
+[11] "Stade Tour Eiffel"                              
+[12] "Arena La Chapelle"                              
+[13] "Centre aquatique"                               
+[14] "Arena Paris Sud 1 (Porte de Versailles)"        
+[15] "Arena Paris Sud 4 (Porte de Versailles)"        
+[16] "La Défense Arena"                               
+[17] "Stade nautique"                                 
+[18] "Vélodrome National de Saint-Quentin-en-Yvelines"
+[19] "Stade Roland Garros"                            </code></pre>
+</div>
+</div>
+</section>
+<section id="exercise-6-quels-sont-les-disciplines-para-olympiques-acceuillies-dans-ces-sites-franciliens" class="level4">
+<h4 class="anchored" data-anchor-id="exercise-6-quels-sont-les-disciplines-para-olympiques-acceuillies-dans-ces-sites-franciliens">Exercise 6: Quels sont les disciplines para-olympiques acceuillies dans ces sites franciliens</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>disciplines_plusieurs_sports <span class="ot">&lt;-</span> data_ex[<span class="fu">grepl</span>(<span class="st">","</span>, data_ex<span class="sc">$</span>sports), <span class="fu">c</span>(<span class="st">"nom"</span>, <span class="st">"sports"</span>)] </span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>disciplines_plusieurs_sports</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                                               nom
+2                                  Stade de France
+4                            Château de Versailles
+8                                     Grand Palais
+9                                        Invalides
+11                                     Pont d'Iéna
+12                                     Arena Bercy
+13                                Arena Paris nord
+14         Arena Paris Sud 6 (Porte de Versailles)
+15                            Stade de la Concorde
+17                            Arena Champs de Mars
+18                               Stade Tour Eiffel
+20                               Arena La Chapelle
+22                                Centre aquatique
+23         Arena Paris Sud 1 (Porte de Versailles)
+24         Arena Paris Sud 4 (Porte de Versailles)
+26                                La Défense Arena
+27                                  Stade nautique
+29 Vélodrome National de Saint-Quentin-en-Yvelines
+30                             Stade Roland Garros
+                                                             sports
+2                                  Athlétisme,Para athlétisme,Rugby
+4               Sports équestres,Para équitation,Pentathlon moderne
+8                 Escrime,Escrime fauteuil,Taekwondo,Para taekwondo
+9        Tir à l'arc,Para tir à l'arc,Athlétisme,Cyclisme sur route
+11                                    Cyclisme sur route,Athlétisme
+12     Basketball,Basket fauteuil,Gymnastique artistique,trampoline
+13                Boxe,Escrime,Pentathlon moderne,Volley-ball assis
+14                                  Haltérophilie,Handball,Goalball
+15                 Basketball 3x3,BMX freestyle,Breaking,Skateboard
+17                              Judo,Para judo,Lutte,Rugby fauteuil
+18                                     Volleyball de plage,Cécifoot
+20 Badminton,Para Badminton,Gymnastique rythmique,Para powerlifting
+22                          Natation artistique,Plongeon,Water-polo
+23                                                Volleyball,Boccia
+24                             Tennis de table,Para tennis de table
+26                                Natation,Para natation,Water-polo
+27                              Canoë,Para canoë,Aviron,Para aviron
+29                       Cyclisme sur piste,Para cyclisme sur piste
+30                                      Tennis,Tennis fauteuil,Boxe</code></pre>
+</div>
+</div>
+</section>
+<section id="exercise-7-sites-qui-aceuillent-le-plus-de-disciples-différentes" class="level4">
+<h4 class="anchored" data-anchor-id="exercise-7-sites-qui-aceuillent-le-plus-de-disciples-différentes">Exercise 7: Sites qui aceuillent le plus de disciples différentes</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>max_sports <span class="ot">&lt;-</span> <span class="fu">max</span>(<span class="fu">sapply</span>(<span class="fu">strsplit</span>(data_ex<span class="sc">$</span>sports, <span class="st">","</span>),length))</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>files_max_sports <span class="ot">&lt;-</span> <span class="fu">which</span>(<span class="fu">sapply</span>(<span class="fu">strsplit</span>(data_ex<span class="sc">$</span>sports, <span class="st">","</span>),length)<span class="sc">==</span>max_sports)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>data_max_sports <span class="ot">&lt;-</span> data_ex[files_max_sports, <span class="fu">c</span>(<span class="st">"nom"</span>, <span class="st">"sports"</span>)]</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>data_max_sports</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                    nom
+8          Grand Palais
+9             Invalides
+12          Arena Bercy
+13     Arena Paris nord
+15 Stade de la Concorde
+17 Arena Champs de Mars
+20    Arena La Chapelle
+27       Stade nautique
+                                                             sports
+8                 Escrime,Escrime fauteuil,Taekwondo,Para taekwondo
+9        Tir à l'arc,Para tir à l'arc,Athlétisme,Cyclisme sur route
+12     Basketball,Basket fauteuil,Gymnastique artistique,trampoline
+13                Boxe,Escrime,Pentathlon moderne,Volley-ball assis
+15                 Basketball 3x3,BMX freestyle,Breaking,Skateboard
+17                              Judo,Para judo,Lutte,Rugby fauteuil
+20 Badminton,Para Badminton,Gymnastique rythmique,Para powerlifting
+27                              Canoë,Para canoë,Aviron,Para aviron</code></pre>
+</div>
+</div>
+</section>
+<section id="exercise-8-quel-discipline-aura-lieu-sur-le-plus-grand-nombre-de-sites-quels-sont-ces-sites" class="level4">
+<h4 class="anchored" data-anchor-id="exercise-8-quel-discipline-aura-lieu-sur-le-plus-grand-nombre-de-sites-quels-sont-ces-sites">Exercise 8: Quel discipline aura lieu sur le plus grand nombre de sites ? Quels sont ces sites ?</h4>
+</section>
+<section id="exercise-9-a-vol-doiseau-quels-sont-les-deux-sites-les-plus-proches" class="level4">
+<h4 class="anchored" data-anchor-id="exercise-9-a-vol-doiseau-quels-sont-les-deux-sites-les-plus-proches">Exercise 9: A vol d’oiseau, quels sont les deux sites les plus proches ?</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Libraires </span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(geosphere)</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="co">#Séparer les coordonnées géographiques en deux colonnes par la virgule </span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>data_ex <span class="ot">&lt;-</span> <span class="fu">separate</span>(data_ex, geo_point, <span class="at">into =</span> <span class="fu">c</span>(<span class="st">"lat"</span>, <span class="st">"long"</span>), <span class="at">sep =</span> <span class="st">", "</span>)</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Fonction pour calculer la distance euclidienne</span></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>data_ex<span class="sc">$</span>lat <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(data_ex<span class="sc">$</span>lat)</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>data_ex<span class="sc">$</span>long <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(data_ex<span class="sc">$</span>long)</span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>distances <span class="ot">&lt;-</span> <span class="fu">distHaversine</span>(data_ex[, <span class="fu">c</span>(<span class="st">"long"</span>, <span class="st">"lat"</span>)])</span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(distances)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] 12109.0289  2007.5022 22017.3512 28908.6007  1204.2823 36658.5531
+ [7] 26702.8086   422.2544 11450.5703 13052.7520  6674.7313 18001.9809
+[13] 22981.5082  4582.2876  8949.4822  9269.0396   436.5820 20677.9533
+[19] 27022.4177 10476.8609 12176.4034 11437.7799   419.6006  5441.5332
+[25]  9902.1865 30003.3283 42913.1029  5092.1872 16782.0752 23146.9519</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Matrice pour garder les distances</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>distances <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="cn">NA</span>, <span class="at">nrow =</span> <span class="fu">nrow</span>(data_ex), <span class="at">ncol =</span> <span class="fu">nrow</span>(data_ex))</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculer les distances entre toutes les coordonnées avec un boucle </span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>(<span class="fu">nrow</span>(data_ex) <span class="sc">-</span> <span class="dv">1</span>)) {</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (j <span class="cf">in</span> (i <span class="sc">+</span> <span class="dv">1</span>)<span class="sc">:</span><span class="fu">nrow</span>(data_ex)) {</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>    distances[i, j] <span class="ot">&lt;-</span> <span class="fu">distHaversine</span>(</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>      <span class="fu">c</span>(data_ex<span class="sc">$</span>lat[i], data_ex<span class="sc">$</span>long[i]),</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>      <span class="fu">c</span>(data_ex<span class="sc">$</span>lat[j], data_ex<span class="sc">$</span>long[j])</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>    distances[j, i] <span class="ot">&lt;-</span> distances[i, j]  <span class="co"># Symétrie</span></span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Convertir la matirce en dataframe</span></span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>distancies_df <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(distances)</span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Imprimer le résultat</span></span>
+<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(distancies_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>           V1         V2        V3        V4         V5        V6        V7
+1          NA 15056.7389 12805.617 19257.081 22271.8538 20748.364 32305.277
+2  15056.7389         NA  3055.102 33226.672  7547.5784  5838.553 46203.555
+3  12805.6173  3055.1018        NA 30416.632 10500.7457  8728.774 43340.214
+4  19257.0811 33226.6717 30416.632        NA 40755.4566 39064.069 13072.796
+5  22271.8538  7547.5784 10500.746 40755.457         NA  1832.738 53746.488
+6  20748.3645  5838.5527  8728.774 39064.069  1832.7378        NA 52032.174
+7  32305.2766 46203.5545 43340.214 13072.796 53746.4884 52032.174        NA
+8   7154.1777  8368.7102  6891.563 26258.120 15228.0109 13794.367 39330.060
+9   7089.9756  8641.7036  7260.763 26260.184 15396.9360 13993.974 39328.977
+10 21469.1770  6894.1107  9898.861 40041.691   912.7678  1592.056 53049.925
+11  4578.5630 10747.8302  8874.430 23746.686 17774.3390 16305.117 36813.557
+12 13964.8487  9759.0469 10855.433 33100.557 12818.2902 12245.605 46064.777
+13 32963.0364 18486.5352 21426.961 51666.843 10939.6176 12699.394 64674.868
+14  4393.8403 13048.3407 11543.918 23288.038 19614.5744 18294.679 36250.926
+15  8050.2199  7829.3426  6689.150 27204.950 14464.9900 13085.188 40275.291
+16  9967.9373 12270.2605  9219.952 22683.744 19523.9643 17701.840 35184.119
+17  5470.7669 10206.5402  8576.444 24697.137 17057.1310 15638.749 37757.950
+18  5104.3510 10306.0857  8522.563 24279.126 17280.7179 15825.708 37346.021
+19 25038.3569 39276.8372 36494.174  6113.760 46791.1543 45115.370  7454.627
+20 13723.9942  2778.3953  4305.937 32522.100  8590.2256  7209.139 45577.401
+21   835.1916 15123.5382 12998.419 19639.369 22230.2205 20747.462 32657.837
+22 14612.9677   494.5346  2574.906 32738.840  8040.4207  6325.288 45712.812
+23  3606.3897 13286.8548 11619.058 22570.579 20012.5928 18647.474 35553.013
+24  4198.3142 13103.4959 11557.563 23109.510 19711.1586 18379.704 36077.336
+25 11082.6533  7569.8078  7833.045 30339.659 12687.3147 11634.908 43384.807
+26  6580.4768 14837.6230 11881.099 18717.878 22369.4745 20609.081 31515.356
+27 42731.8665 31546.9111 34540.397 61925.842 25263.9806 26997.171 74882.553
+28 22129.9359 37025.2300 34471.367  7155.132 44375.4783 42805.960 12723.117
+29 24990.3824 39217.2381 36432.290  6045.720 46732.7044 45055.788  7481.905
+30  1075.4705 15348.5251 12948.414 18541.332 22674.6397 21105.538 31608.877
+31 33563.9961 20815.6222 23865.876 52780.299 14034.3137 15821.176 65849.102
+           V8         V9        V10        V11       V12       V13        V14
+1   7154.1777  7089.9756 21469.1770  4578.5630 13964.849 32963.036  4393.8403
+2   8368.7102  8641.7036  6894.1107 10747.8302  9759.047 18486.535 13048.3407
+3   6891.5627  7260.7629  9898.8609  8874.4300 10855.433 21426.961 11543.9176
+4  26258.1202 26260.1835 40041.6906 23746.6865 33100.557 51666.843 23288.0381
+5  15228.0109 15396.9360   912.7678 17774.3390 12818.290 10939.618 19614.5744
+6  13794.3670 13993.9745  1592.0558 16305.1173 12245.605 12699.394 18294.6793
+7  39330.0598 39328.9768 53049.9246 36813.5571 46064.777 64674.868 36250.9261
+8          NA   427.4280 14398.7550  2578.9788  7963.004 25825.025  4712.2116
+9    427.4280         NA 14557.8613  2519.9293  7727.262 25936.700  4409.2400
+10 14398.7550 14557.8613         NA 16954.3051 11914.035 11625.971 18749.9696
+11  2578.9788  2519.9293 16954.3051         NA  9891.422 28402.558  2963.7697
+12  7963.0039  7727.2621 11914.0354  9891.4218        NA 21516.849  9816.2954
+13 25825.0254 25936.7004 11625.9710 28402.5580 21516.849        NA 29913.6785
+14  4712.2116  4409.2400 18749.9696  2963.7697  9816.295 29913.678         NA
+15   980.7896   961.6114 13620.4242  3476.2888  7046.447 24979.538  5241.7774
+16 10025.8846 10391.8434 19007.5386  9501.7749 17616.917 30319.074 12149.3574
+17  1849.3203  1666.2102 16220.8678  1021.5252  8869.957 27600.340  2971.3433
+18  2064.3110  1988.8923 16456.1935   532.4663  9404.021 27888.784  3127.1572
+19 32128.3513 32104.6438 46064.2776 29584.7660 38691.770 57683.557 28889.2971
+20  6638.7599  6809.1036  7761.0183  9194.1802  7016.752 19254.989 11085.6168
+21  7024.6367  6911.7125 21411.5436  4457.2815 13490.057 32845.139  3770.2012
+22  7989.1031  8274.7127  7388.6434 10335.3530  9773.131 18979.707 12683.9395
+23  4918.3403  4667.7734 19158.7481  2810.3001 10530.691 30406.154   788.7158
+24  4751.9835  4461.7925 18849.1679  2906.4876  9992.586 30034.730   195.7977
+25  4460.9679  4294.2778 11786.1549  6681.1681  3631.786 22601.590  7398.7201
+26  9777.4614 10010.2954 21731.5399  8146.4600 17735.215 33304.498 10008.3272
+27 36066.4446 35973.1166 25439.3030 38408.0636 28826.378 17814.316 38642.2014
+28 29268.4081 29170.5973 43586.0412 26689.8265 35064.482 55091.120 25465.1629
+29 32077.7419 32055.0558 46006.6733 29535.2263 38651.322 57626.489 28847.6012
+30  7733.4610  7720.2781 21892.3214  5205.3645 14836.317 33442.153  5410.8305
+31 26527.0114 26520.3031 14313.4527 29035.7208 20357.071  7341.222 29866.1581
+          V15       V16        V17        V18         V19       V20        V21
+1   8050.2199  9967.937  5470.7669  5104.3510 25038.35685 13723.994   835.1916
+2   7829.3426 12270.260 10206.5402 10306.0857 39276.83715  2778.395 15123.5382
+3   6689.1499  9219.952  8576.4444  8522.5626 36494.17399  4305.937 12998.4193
+4  27204.9501 22683.744 24697.1367 24279.1264  6113.75995 32522.100 19639.3693
+5  14464.9900 19523.964 17057.1310 17280.7179 46791.15430  8590.226 22230.2205
+6  13085.1878 17701.840 15638.7490 15825.7078 45115.37030  7209.139 20747.4619
+7  40275.2910 35184.119 37757.9500 37346.0206  7454.62705 45577.401 32657.8366
+8    980.7896 10025.885  1849.3203  2064.3110 32128.35131  6638.760  7024.6367
+9    961.6114 10391.843  1666.2102  1988.8923 32104.64382  6809.104  6911.7125
+10 13620.4242 19007.539 16220.8678 16456.1935 46064.27757  7761.018 21411.5436
+11  3476.2888  9501.775  1021.5252   532.4663 29584.76605  9194.180  4457.2815
+12  7046.4465 17616.917  8869.9570  9404.0208 38691.76964  7016.752 13490.0566
+13 24979.5383 30319.074 27600.3401 27888.7835 57683.55696 19254.989 32845.1391
+14  5241.7774 12149.357  2971.3433  3127.1572 28889.29714 11085.617  3770.2012
+15         NA 10763.366  2620.8057  2946.9000 33058.49460  5885.300  7871.8150
+16 10763.3665        NA 10188.1278  9674.7744 28784.98450 12943.899 10679.7358
+17  2620.8057 10188.128         NA   567.5872 30507.16918  8467.326  5254.7685
+18  2946.9000  9674.774   567.5872         NA 30116.33966  8695.175  4960.7198
+19 33058.4946 28784.984 30507.1692 30116.3397          NA 38489.515 25348.9876
+20  5885.2997 12943.899  8467.3255  8695.1753 38489.51460        NA 13651.4314
+21  7871.8150 10679.736  5254.7685  4960.7198 25348.98756 13651.431         NA
+22  7485.0504 11794.349  9818.7447  9901.8031 38791.12163  2756.517 14692.6679
+23  5562.2950 11634.328  3087.5255  3099.4224 28205.86047 11445.371  2998.9915
+24  5312.2004 12018.707  2981.1649  3101.6038 28719.14763 11170.782  3578.0437
+25  3500.3702 13987.188  5683.3880  6159.5592 36092.62635  4879.972 10744.4651
+26 10720.3469  4512.378  9103.3590  8536.0470 24829.21961 14710.673  7400.6044
+27 35086.4426 43701.237 37408.7929 37884.9860 67491.11691 30844.631 42298.6077
+28 30131.2286 27836.062 27514.2770 27206.0948  6098.00408 35852.217 22259.7607
+29 33008.6154 28713.333 30458.7599 30066.8779    91.69166 38434.833 25303.4409
+30  8668.8671  9306.441  6165.2474  5737.7972 24394.95828 14187.335  1890.5226
+31 25575.8047 33085.347 28098.0622 28503.2715 58601.77829 20589.854 33267.4788
+          V22        V23        V24       V25       V26      V27       V28
+1  14612.9677  3606.3897  4198.3142 11082.653  6580.477 42731.87 22129.936
+2    494.5346 13286.8548 13103.4959  7569.808 14837.623 31546.91 37025.230
+3   2574.9060 11619.0583 11557.5627  7833.045 11881.099 34540.40 34471.367
+4  32738.8397 22570.5787 23109.5099 30339.659 18717.878 61925.84  7155.132
+5   8040.4207 20012.5928 19711.1586 12687.315 22369.475 25263.98 44375.478
+6   6325.2883 18647.4736 18379.7044 11634.908 20609.081 26997.17 42805.960
+7  45712.8121 35553.0128 36077.3361 43384.807 31515.356 74882.55 12723.117
+8   7989.1031  4918.3403  4751.9835  4460.968  9777.461 36066.44 29268.408
+9   8274.7127  4667.7734  4461.7925  4294.278 10010.295 35973.12 29170.597
+10  7388.6434 19158.7481 18849.1679 11786.155 21731.540 25439.30 43586.041
+11 10335.3530  2810.3001  2906.4876  6681.168  8146.460 38408.06 26689.826
+12  9773.1308 10530.6913  9992.5860  3631.786 17735.215 28826.38 35064.482
+13 18979.7072 30406.1536 30034.7299 22601.590 33304.498 17814.32 55091.120
+14 12683.9395   788.7158   195.7977  7398.720 10008.327 38642.20 25465.163
+15  7485.0504  5562.2950  5312.2004  3500.370 10720.347 35086.44 30131.229
+16 11794.3490 11634.3284 12018.7075 13987.188  4512.378 43701.24 27836.062
+17  9818.7447  3087.5255  2981.1649  5683.388  9103.359 37408.79 27514.277
+18  9901.8031  3099.4224  3101.6038  6159.559  8536.047 37884.99 27206.095
+19 38791.1216 28205.8605 28719.1476 36092.626 24829.220 67491.12  6098.004
+20  2756.5174 11445.3715 11170.7816  4879.972 14710.673 30844.63 35852.217
+21 14692.6679  2998.9915  3578.0437 10744.465  7400.604 42298.61 22259.761
+22         NA 12903.6370 12734.2435  7421.643 14343.098 31996.71 36558.828
+23 12903.6370         NA   592.9181  7981.963  9312.840 39355.28 24868.186
+24 12734.2435   592.9181         NA  7539.999  9834.345 38818.94 25316.006
+25  7421.6430  7981.9634  7539.9991        NA 14218.988 31727.11 32849.176
+26 14343.0980  9312.8397  9834.3453 14218.988        NA 45422.07 23490.009
+27 31996.7129 39355.2833 38818.9359 31727.114 45422.066       NA 63604.347
+28 36558.8279 24868.1861 25316.0063 32849.176 23490.009 63604.35        NA
+29 38731.3574 28163.0442 28677.1777 36046.692 24762.464 67452.65  6135.202
+30 14890.7125  4622.3076  5215.0745 11837.928  5657.121 43543.37 21703.185
+31 21291.1278 30492.8536 30021.0016 22530.340 35295.471 11400.29 55319.427
+           V29       V30       V31
+1  24990.38243  1075.470 33563.996
+2  39217.23807 15348.525 20815.622
+3  36432.28993 12948.414 23865.876
+4   6045.72039 18541.332 52780.299
+5  46732.70442 22674.640 14034.314
+6  45055.78826 21105.538 15821.176
+7   7481.90543 31608.877 65849.102
+8  32077.74192  7733.461 26527.011
+9  32055.05576  7720.278 26520.303
+10 46006.67331 21892.321 14313.453
+11 29535.22626  5205.364 29035.721
+12 38651.32188 14836.317 20357.071
+13 57626.48926 33442.153  7341.222
+14 28847.60120  5410.831 29866.158
+15 33008.61536  8668.867 25575.805
+16 28713.33263  9306.441 33085.347
+17 30458.75987  6165.247 28098.062
+18 30066.87785  5737.797 28503.271
+19    91.69166 24394.958 58601.778
+20 38434.83292 14187.335 20589.854
+21 25303.44092  1890.523 33267.479
+22 38731.35738 14890.712 21291.128
+23 28163.04421  4622.308 30492.854
+24 28677.17774  5215.075 30021.002
+25 36046.69222 11837.928 22530.340
+26 24762.46357  5657.121 35295.471
+27 67452.65364 43543.366 11400.286
+28  6135.20231 21703.185 55319.427
+29          NA 24344.289 58554.135
+30 24344.28919        NA 34240.231
+31 58554.13520 34240.231        NA</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Le sites les plus proches</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>min_distance <span class="ot">&lt;-</span> <span class="fu">min</span>(distancies_df, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>min_distance </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 91.69166</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Min distances</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>min_distannce <span class="ot">&lt;-</span> <span class="fu">which</span>(distancies_df<span class="sc">==</span>min_distance, <span class="at">arr.ind=</span><span class="cn">TRUE</span>)</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>min_distannce</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     row col
+[1,]  29  19
+[2,]  19  29</code></pre>
+</div>
+</div>
+<p>On observe que la distance minimale est de 91.69 km, identifiée par min_distance. Min_distannce permet d’identifier la ligne et la colonne de la valeur 91.69 au sein de la matrice. Cela correspond aux noms des sites des colonnes 19 et 29 du dataframe data_ex. On observe que Stade BMX de Saint-Quentin-en-Yvelines et Vélodrome National de Saint-Quentin-en-Yvelines sont les sites les plus proches.</p>
+</section>
+<section id="exercise-10-quels-sont-les-sites-les-plus-éloignés" class="level4">
+<h4 class="anchored" data-anchor-id="exercise-10-quels-sont-les-sites-les-plus-éloignés">Exercise 10: Quels sont les sites les plus éloignés</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>max_distance <span class="ot">&lt;-</span> <span class="fu">max</span>(distancies_df, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(max_distance)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 74882.55</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>max_distannce <span class="ot">&lt;-</span> <span class="fu">which</span>(distancies_df<span class="sc">==</span>max_distance, <span class="at">arr.ind=</span><span class="cn">TRUE</span>)</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>max_distannce</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     row col
+[1,]  27   7
+[2,]   7  27</code></pre>
+</div>
+</div>
+<p>On observe que Colline d’Elancourt (7) et Stade Nautique (27) sont les sites les plus éloignés avec une distance de 74882.55 km.</p>
+</section>
+<section id="exercise-11" class="level4">
+<h4 class="anchored" data-anchor-id="exercise-11">Exercise 11:</h4>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
