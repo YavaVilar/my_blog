@@ -1,13 +1,41 @@
 ---
 title: "Post With Code"
-author: "Harlow Malloc"
+author: "Yava Vilar Valera"
 date: "2024-03-01"
 categories: [news, code, analysis]
 image: "image.jpg"
 ---
 
-This is a post with executable code.
+Le package **`olympicsWeather`** est une bibliothèque R dédiée à la récupération de prévisions météorologiques en temps réel pour différents sites olympiques existants. Il offre des fonctionnalités permettant d'obtenir des données détaillées sur la température, la température ressentie, la probabilité de précipitations et les précipitations effectives.
+
+### **Installation du Package**
+
+Pour installer le package **`olympicsWeather`** depuis GitHub, vous pouvez utiliser le package **`remotes`**. Assurez-vous d'avoir le package **`remotes`** installé au préalable. Si ce n'est pas le cas, vous pouvez l'installer avec la commande suivante :
+
+## Librarie OlympicsWeather
+
+Le package **`olympicsWeather`** est une bibliothèque R dédiée à la récupération de prévisions météorologiques en temps réel pour différents sites olympiques existants. Il offre des fonctionnalités permettant d'obtenir des données détaillées sur la température, la température ressentie, la probabilité de précipitations et les précipitations effectives.
+
+### **Installation du Package**
+
+Pour installer le package **`olympicsWeather`** depuis GitHub, vous pouvez utiliser le package **`remotes`**. Assurez-vous d'avoir le package **`remotes`** installé au préalable. Si ce n'est pas le cas, vous pouvez l'installer avec la commande suivante :
 
 ```{r}
-1 + 1
+install.packages("remotes")
+```
+
+Une fois que le package **`remotes`** est installé, vous pouvez utiliser la commande suivante pour installer **`olympicsWeather`** :
+
+```{r}
+remotes::install_github("YavaVilar/olympicsWeather")
+```
+
+## Prévision de la météo pour le stade de France
+
+```{r}
+library(olympicsWeather)
+library(tidygeocoder)
+library(httr2)
+library(tibble)
+meteo_stade_france <- get_forecast("France")
 ```

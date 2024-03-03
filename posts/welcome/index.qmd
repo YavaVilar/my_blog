@@ -1,12 +1,10 @@
 ---
-title: "Welcome To My Blog"
-author: "Tristan O'Malley"
-date: "2024-02-27"
+title: "Prédiction des météos"
+author: "Yava Vilar Valera"
+date: "2024-03-10"
 categories: [news]
 ---
 
 This is the first post in a Quarto blog. Welcome!
 
-![](thumbnail.jpg)
-
-Since this post doesn't specify an explicit `image`, the first image in the post will be used in the listing page of posts.
+![](images/Météo.jpg)

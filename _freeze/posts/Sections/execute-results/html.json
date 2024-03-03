@@ -1,0 +1,14 @@
+{
+  "hash": "e2305b4fa1299a2eb9b5a9f482520d65",
+  "result": {
+    "markdown": "\\# Sección Principal\n\nEste es el contenido de la sección principal.\n\n## Subsección 1\n\nContenido de la subsección 1.\n\n### Subsubsección 1.1\n\nContenido de la subsubsección 1.1.\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

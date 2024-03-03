@@ -1,5 +1,5 @@
 ---
-title: "About"
+title: "Prévision de la météorologie"
 image: profile.jpg
 about:
   template: jolla
@@ -14,5 +14,3 @@ about:
       text: Github
       href: https://github.com
 ---
-
-About this blog
