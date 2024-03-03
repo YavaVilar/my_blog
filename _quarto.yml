@@ -9,9 +9,6 @@ website:
         href: https://github.com/
       - icon: twitter
         href: https://twitter.com
-      left:
-      - text: "Exercices semaine 1"
-        href: TD1.qmd
 format:
   html:
     theme: flatly
@@ -20,4 +17,7 @@ format:
     highlight-style: a11y
 
 editor: visual
+
+execute:
+  freeze: auto
 
