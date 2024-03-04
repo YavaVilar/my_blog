@@ -6,10 +6,10 @@ toc: true
 ---
 
 ```{r setup, include=FALSE}
+
 knitr::opts_chunk$set(echo=TRUE, warning=FALSE, errors=FALSE, message=FALSE, results=TRUE, fig.width=8, fig.height=6)
-library(tidygeocoder)
-library(httr2)
-library(tibble)
+
+library(olympicsWeather)
 
 ```
 
@@ -24,13 +24,13 @@ Le package **`olympicsWeather`** est une bibliothèque R dédiée à la récupé
 Pour installer le package **`olympicsWeather`** depuis GitHub, vous pouvez utiliser le package **`remotes`**. Assurez-vous d'avoir le package **`remotes`** installé au préalable. Si ce n'est pas le cas, vous pouvez l'installer avec la commande suivante :
 
 ```{r}
-install.packages("remotes")
+## install.packages("remotes")
 ```
 
 Une fois que le package **`remotes`** est installé, vous pouvez utiliser la commande suivante pour installer **`olympicsWeather`** :
 
 ```{r}
-remotes::install_github("YavaVilar/olympicsWeather")
+## remotes::install_github("YavaVilar/olympicsWeather")
 ```
 
 ## Prévision de la météo pour le stade de France
@@ -56,4 +56,7 @@ meteo_Tahiti
 
 meteo_coordonnées <- get_forecast("43.276703,5.334791")
 meteo_coordonnées
+
+
+get_fore
 ```

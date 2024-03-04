@@ -171,12 +171,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#installation-du-package" id="toc-installation-du-package" class="nav-link active" data-scroll-target="#installation-du-package"><strong>Installation du Package</strong></a></li>
-  <li><a href="#librarie-olympicsweather" id="toc-librarie-olympicsweather" class="nav-link" data-scroll-target="#librarie-olympicsweather">Librarie OlympicsWeather</a>
-  <ul class="collapse">
-  <li><a href="#installation-du-package-1" id="toc-installation-du-package-1" class="nav-link" data-scroll-target="#installation-du-package-1"><strong>Installation du Package</strong></a></li>
-  </ul></li>
+  <li><a href="#librarie-olympicsweather" id="toc-librarie-olympicsweather" class="nav-link active" data-scroll-target="#librarie-olympicsweather">Librarie OlympicsWeather</a></li>
   <li><a href="#prévision-de-la-météo-pour-le-stade-de-france" id="toc-prévision-de-la-météo-pour-le-stade-de-france" class="nav-link" data-scroll-target="#prévision-de-la-météo-pour-le-stade-de-france">Prévision de la météo pour le stade de France</a></li>
+  <li><a href="#prévision-de-la-météo-pour-tahiti" id="toc-prévision-de-la-météo-pour-tahiti" class="nav-link" data-scroll-target="#prévision-de-la-météo-pour-tahiti">Prévision de la météo pour Tahiti</a></li>
+  <li><a href="#prévision-de-la-météo-pour-les-coordonnées-43.276703-5.334791" id="toc-prévision-de-la-météo-pour-les-coordonnées-43.276703-5.334791" class="nav-link" data-scroll-target="#prévision-de-la-météo-pour-les-coordonnées-43.276703-5.334791">Prévision de la météo pour les coordonnées 43.276703, 5.334791</a></li>
   </ul>
 </nav>
     </div>
@@ -186,64 +184,108 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
+<section id="librarie-olympicsweather" class="level2">
+<h2 class="anchored" data-anchor-id="librarie-olympicsweather">Librarie OlympicsWeather</h2>
 <p>Le package <strong><code>olympicsWeather</code></strong> est une bibliothèque R dédiée à la récupération de prévisions météorologiques en temps réel pour différents sites olympiques existants. Il offre des fonctionnalités permettant d’obtenir des données détaillées sur la température, la température ressentie, la probabilité de précipitations et les précipitations effectives.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../..\ol weather.jpg" class="img-fluid figure-img" width="365"></p>
 </figure>
 </div>
-<section id="installation-du-package" class="level3">
-<h3 class="anchored" data-anchor-id="installation-du-package"><strong>Installation du Package</strong></h3>
-<p>Pour installer le package <strong><code>olympicsWeather</code></strong> depuis GitHub, vous pouvez utiliser le package <strong><code>remotes</code></strong>. Assurez-vous d’avoir le package <strong><code>remotes</code></strong> installé au préalable. Si ce n’est pas le cas, vous pouvez l’installer avec la commande suivante :</p>
-</section>
-<section id="librarie-olympicsweather" class="level2">
-<h2 class="anchored" data-anchor-id="librarie-olympicsweather">Librarie OlympicsWeather</h2>
-<p>Le package <strong><code>olympicsWeather</code></strong> est une bibliothèque R dédiée à la récupération de prévisions météorologiques en temps réel pour différents sites olympiques existants. Il offre des fonctionnalités permettant d’obtenir des données détaillées sur la température, la température ressentie, la probabilité de précipitations et les précipitations effectives.</p>
-<section id="installation-du-package-1" class="level3">
-<h3 class="anchored" data-anchor-id="installation-du-package-1"><strong>Installation du Package</strong></h3>
+<section id="installation-du-package" class="level4">
+<h4 class="anchored" data-anchor-id="installation-du-package"><strong>Installation du Package</strong></h4>
 <p>Pour installer le package <strong><code>olympicsWeather</code></strong> depuis GitHub, vous pouvez utiliser le package <strong><code>remotes</code></strong>. Assurez-vous d’avoir le package <strong><code>remotes</code></strong> installé au préalable. Si ce n’est pas le cas, vous pouvez l’installer avec la commande suivante :</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"remotes"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>The following package(s) will be installed:
 - remotes [2.4.2.1]
-These packages will be installed into "C:/Users/yavav/Desktop/my_blog/renv/library/R-4.3/x86_64-w64-mingw32".
+These packages will be installed into "~/Desktop/my_blog/renv/library/R-4.3/x86_64-w64-mingw32".
 
 # Installing packages --------------------------------------------------------
 - Installing remotes ...                        OK [linked from cache]
-Successfully installed 1 package in 45 milliseconds.</code></pre>
+Successfully installed 1 package in 11 milliseconds.</code></pre>
 </div>
 </div>
 <p>Une fois que le package <strong><code>remotes</code></strong> est installé, vous pouvez utiliser la commande suivante pour installer <strong><code>olympicsWeather</code></strong> :</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"YavaVilar/olympicsWeather"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Skipping install of 'olympicsWeather' from a github remote, the SHA1 (8d3602c2) has not changed since last install.
-  Use `force = TRUE` to force installation</code></pre>
-</div>
 </div>
 </section>
 </section>
 <section id="prévision-de-la-météo-pour-le-stade-de-france" class="level2">
 <h2 class="anchored" data-anchor-id="prévision-de-la-météo-pour-le-stade-de-france">Prévision de la météo pour le stade de France</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(olympicsWeather)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidygeocoder)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(httr2)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tibble)</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>meteo_stade_france <span class="ot">&lt;-</span> <span class="fu">get_forecast</span>(<span class="st">"France"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Passing 1 address to the Nominatim single address geocoder</code></pre>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>meteo_stade_france <span class="ot">&lt;-</span> <span class="fu">get_forecast</span>(<span class="st">"stade de France"</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>meteo_stade_france</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 168 × 5
+   data_heure     temperature_celsius temperature_ressenti…¹ precipitation_proba
+   &lt;chr&gt;                        &lt;dbl&gt;                  &lt;dbl&gt;               &lt;int&gt;
+ 1 2024-03-04T00…                 3.7                    1.3                   0
+ 2 2024-03-04T01…                 3.5                    1.1                   0
+ 3 2024-03-04T02…                 3.1                    0.6                   0
+ 4 2024-03-04T03…                 2.6                    0.1                   0
+ 5 2024-03-04T04…                 2.3                   -0.2                   0
+ 6 2024-03-04T05…                 1.9                   -0.9                   0
+ 7 2024-03-04T06…                 1.7                   -0.6                   0
+ 8 2024-03-04T07…                 1.9                   -0.5                   0
+ 9 2024-03-04T08…                 2.6                    0.4                   0
+10 2024-03-04T09…                 5.9                    3.3                   0
+# ℹ 158 more rows
+# ℹ abbreviated name: ¹​temperature_ressentie_celsius
+# ℹ 1 more variable: precipitation &lt;dbl&gt;</code></pre>
 </div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Query completed in: 1 seconds</code></pre>
 </div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: `as.tibble()` was deprecated in tibble 2.0.0.
-ℹ Please use `as_tibble()` instead.
-ℹ The signature and semantics have changed, see `?as_tibble`.
-ℹ The deprecated feature was likely used in the olympicsWeather package.
-  Please report the issue to the authors.</code></pre>
+</section>
+<section id="prévision-de-la-météo-pour-tahiti" class="level2">
+<h2 class="anchored" data-anchor-id="prévision-de-la-météo-pour-tahiti">Prévision de la météo pour Tahiti</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>meteo_Tahiti <span class="ot">&lt;-</span> <span class="fu">get_forecast</span>(<span class="st">"Tahiti"</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>meteo_Tahiti</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 168 × 5
+   data_heure     temperature_celsius temperature_ressenti…¹ precipitation_proba
+   &lt;chr&gt;                        &lt;dbl&gt;                  &lt;dbl&gt;               &lt;int&gt;
+ 1 2024-03-04T00…                17.6                   18.8                  81
+ 2 2024-03-04T01…                17.7                   18.7                  87
+ 3 2024-03-04T02…                17.7                   18.5                  94
+ 4 2024-03-04T03…                17.8                   18.7                 100
+ 5 2024-03-04T04…                17.8                   18.7                  96
+ 6 2024-03-04T05…                17.7                   18.8                  91
+ 7 2024-03-04T06…                17.8                   18.3                  87
+ 8 2024-03-04T07…                17.8                   18.4                  89
+ 9 2024-03-04T08…                17.8                   18.5                  92
+10 2024-03-04T09…                17.8                   18.6                  94
+# ℹ 158 more rows
+# ℹ abbreviated name: ¹​temperature_ressentie_celsius
+# ℹ 1 more variable: precipitation &lt;dbl&gt;</code></pre>
+</div>
+</div>
+</section>
+<section id="prévision-de-la-météo-pour-les-coordonnées-43.276703-5.334791" class="level2">
+<h2 class="anchored" data-anchor-id="prévision-de-la-météo-pour-les-coordonnées-43.276703-5.334791">Prévision de la météo pour les coordonnées 43.276703, 5.334791</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>meteo_coordonnées <span class="ot">&lt;-</span> <span class="fu">get_forecast</span>(<span class="st">"43.276703,5.334791"</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>meteo_coordonnées</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 168 × 5
+   data_heure     temperature_celsius temperature_ressenti…¹ precipitation_proba
+   &lt;chr&gt;                        &lt;dbl&gt;                  &lt;dbl&gt;               &lt;int&gt;
+ 1 2024-03-04T00…                 1.4                   -2                     0
+ 2 2024-03-04T01…                 0.9                   -2.4                   0
+ 3 2024-03-04T02…                 0.4                   -2.8                   0
+ 4 2024-03-04T03…                -0.1                   -3.1                   0
+ 5 2024-03-04T04…                -0.2                   -3.4                   0
+ 6 2024-03-04T05…                -0.4                   -3.5                   0
+ 7 2024-03-04T06…                -1.4                   -4.6                   0
+ 8 2024-03-04T07…                -1.2                   -4.3                   0
+ 9 2024-03-04T08…                 0.4                   -2.6                   0
+10 2024-03-04T09…                 4.9                    1.9                   0
+# ℹ 158 more rows
+# ℹ abbreviated name: ¹​temperature_ressentie_celsius
+# ℹ 1 more variable: precipitation &lt;dbl&gt;</code></pre>
 </div>
 </div>
 
