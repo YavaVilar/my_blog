@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Yava Vilar Valera">
+<meta name="dcterms.date" content="2024-03-04">
 
-<title>my_blog - Exercices Semaine 1</title>
+<title>my_blog - Jeux Olympiques 2024 à Paris</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -136,14 +138,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Exercices Semaine 1</h1>
+      <h1 class="title">Jeux Olympiques 2024 à Paris</h1>
                       </div>
   </div>
     
   
   <div class="quarto-title-meta">
 
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Yava Vilar Valera </p>
+            </div>
+    </div>
       
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">March 4, 2024</p>
+      </div>
+    </div>
     
       
     </div>
@@ -157,7 +171,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#td1" id="toc-td1" class="nav-link active" data-scroll-target="#td1">TD1</a></li>
+  <li><a href="#tutorial-1-jeux-olympiques-2024-à-paris" id="toc-tutorial-1-jeux-olympiques-2024-à-paris" class="nav-link active" data-scroll-target="#tutorial-1-jeux-olympiques-2024-à-paris">Tutorial 1: Jeux Olympiques 2024 à Paris</a></li>
   </ul>
 </nav>
     </div>
@@ -167,12 +181,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="td1" class="level2">
-<h2 class="anchored" data-anchor-id="td1">TD1</h2>
-<section id="exercise-2" class="level4">
-<h4 class="anchored" data-anchor-id="exercise-2">Exercise 2</h4>
+<section id="tutorial-1-jeux-olympiques-2024-à-paris" class="level2">
+<h2 class="anchored" data-anchor-id="tutorial-1-jeux-olympiques-2024-à-paris">Tutorial 1: Jeux Olympiques 2024 à Paris</h2>
+<p>Cet ensemble d’exercices en R se concentre sur l’analyse des données relatives aux infrastructures olympiques des Jeux de 2024 à Paris. Nous utiliserons exclusivement les fonctions de base de R pour explorer, analyser et extraire des informations clés sur les sites olympiques et paralympiques.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../..\Paris20241YearGo2.jpg" class="img-fluid figure-img" width="448"></p>
+</figure>
+</div>
+<ul>
+<li><strong>Lire le fichier avec la base de données, nom et nature des colonnes, nombre de lignes</strong></li>
+</ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Renommer en data_ex</span></span>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Lire et nommer le fichier </span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>data_ex <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"C:/Users/yavav/Downloads/paris-2024-sites-olympiques-et-paralympiques-franciliens (1).csv"</span>, <span class="at">sep=</span><span class="st">";"</span>, <span class="at">dec=</span><span class="st">","</span>, <span class="at">quote=</span><span class="st">"</span><span class="sc">\"</span><span class="st">"</span>, <span class="at">na.strings =</span> <span class="cn">NA</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">#Noms et nature des colonnes </span></span>
@@ -185,14 +206,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  $ sports                        : chr  "Football" "Athlétisme,Para athlétisme,Rugby" "" "Sports équestres,Para équitation,Pentathlon moderne" ...</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Nombre de lignes </span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(data_ex) <span class="co">#31 lignes</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(data_ex) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 31</code></pre>
 </div>
 </div>
-</section>
-<section id="exercise-3-combien-il-y-a-t-il-de-sites-olympiques" class="level4">
-<h4 class="anchored" data-anchor-id="exercise-3-combien-il-y-a-t-il-de-sites-olympiques">Exercise 3: Combien il y a-t-il de sites olympiques</h4>
+<p>Le dataframe contient 4 colonnes: geo_point, village olympique, sites_olympiques_paralympiques et sports, codées en <em>chr</em> (caractère), ainsi que31 colonnes.</p>
+<ul>
+<li><strong>Combien il y a-t-il de sites olympiques</strong></li>
+</ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">0</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -201,14 +223,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    x <span class="ot">&lt;-</span> x <span class="sc">+</span> <span class="dv">1</span></span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  } } </span>
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Número de Sites olympiques:"</span>, x))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Número total de Sites olympiques:"</span>, x))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "Número de Sites olympiques: 26"</code></pre>
+<pre><code>[1] "Número total de Sites olympiques: 26"</code></pre>
 </div>
 </div>
-</section>
-<section id="exercise-4-combien-il-y-a-t-il-de-sites-paralympiques" class="level4">
-<h4 class="anchored" data-anchor-id="exercise-4-combien-il-y-a-t-il-de-sites-paralympiques">Exercise 4: Combien il y a-t-il de sites paralympiques</h4>
+<ul>
+<li><strong>Combien il y a-t-il de sites paralympiques</strong></li>
+</ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">0</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -217,18 +239,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    y <span class="ot">&lt;-</span> y <span class="sc">+</span> <span class="dv">1</span></span>
 <span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  } } </span>
 <span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Número de Sites paralympiques:"</span>, y))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Número total de Sites paralympiques:"</span>, y))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "Número de Sites paralympiques: 19"</code></pre>
+<pre><code>[1] "Número total de Sites paralympiques: 19"</code></pre>
 </div>
 </div>
-</section>
-<section id="exercise-5-quels-sont-les-sites-qui-aceuillent-plusieurs-disciplines-sportives" class="level4">
-<h4 class="anchored" data-anchor-id="exercise-5-quels-sont-les-sites-qui-aceuillent-plusieurs-disciplines-sportives">Exercise 5: Quels sont les sites qui aceuillent plusieurs disciplines sportives</h4>
+<ul>
+<li><strong>Quels sont les sites qui aceuillent plusieurs disciplines sportives</strong></li>
+</ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Ce code permet d'identifier le nom des sites qui aceuillent plus d'un sport</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>sites_plusieurs_sports <span class="ot">&lt;-</span> data_ex[<span class="fu">grepl</span>(<span class="st">","</span>, data_ex<span class="sc">$</span>sports), <span class="fu">c</span>(<span class="st">"nom"</span>)]</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>sites_plusieurs_sports</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#On cherche  les cellules de la colonne sports qui continnent des éléments séparés par un virgule, indice d'acceuil de plus d'un sport</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>sites_plusieurs_sports <span class="ot">&lt;-</span> data_ex[<span class="fu">grepl</span>(<span class="st">","</span>, data_ex<span class="sc">$</span>sports), <span class="fu">c</span>(<span class="st">"nom"</span>)]</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>sites_plusieurs_sports</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] "Stade de France"                                
  [2] "Château de Versailles"                          
@@ -251,9 +274,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 [19] "Stade Roland Garros"                            </code></pre>
 </div>
 </div>
-</section>
-<section id="exercise-6-quels-sont-les-disciplines-para-olympiques-acceuillies-dans-ces-sites-franciliens" class="level4">
-<h4 class="anchored" data-anchor-id="exercise-6-quels-sont-les-disciplines-para-olympiques-acceuillies-dans-ces-sites-franciliens">Exercise 6: Quels sont les disciplines para-olympiques acceuillies dans ces sites franciliens</h4>
+<ul>
+<li><strong>Quelles sont les disciplines para-olympiques acceuillies dans ces sites franciliens</strong></li>
+</ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>disciplines_plusieurs_sports <span class="ot">&lt;-</span> data_ex[<span class="fu">grepl</span>(<span class="st">","</span>, data_ex<span class="sc">$</span>sports), <span class="fu">c</span>(<span class="st">"nom"</span>, <span class="st">"sports"</span>)] </span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>disciplines_plusieurs_sports</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -300,9 +323,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 30                                      Tennis,Tennis fauteuil,Boxe</code></pre>
 </div>
 </div>
-</section>
-<section id="exercise-7-sites-qui-aceuillent-le-plus-de-disciples-différentes" class="level4">
-<h4 class="anchored" data-anchor-id="exercise-7-sites-qui-aceuillent-le-plus-de-disciples-différentes">Exercise 7: Sites qui aceuillent le plus de disciples différentes</h4>
+<p>Le dataframe résultant permet de visualiser le nom du site avec les différentes disciplines associées.</p>
+<ul>
+<li><strong>Sites qui aceuillent le plus de disciples différentes</strong></li>
+</ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>max_sports <span class="ot">&lt;-</span> <span class="fu">max</span>(<span class="fu">sapply</span>(<span class="fu">strsplit</span>(data_ex<span class="sc">$</span>sports, <span class="st">","</span>),length))</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -332,29 +356,69 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 27                              Canoë,Para canoë,Aviron,Para aviron</code></pre>
 </div>
 </div>
-</section>
-<section id="exercise-8-quel-discipline-aura-lieu-sur-le-plus-grand-nombre-de-sites-quels-sont-ces-sites" class="level4">
-<h4 class="anchored" data-anchor-id="exercise-8-quel-discipline-aura-lieu-sur-le-plus-grand-nombre-de-sites-quels-sont-ces-sites">Exercise 8: Quel discipline aura lieu sur le plus grand nombre de sites ? Quels sont ces sites ?</h4>
-</section>
-<section id="exercise-9-a-vol-doiseau-quels-sont-les-deux-sites-les-plus-proches" class="level4">
-<h4 class="anchored" data-anchor-id="exercise-9-a-vol-doiseau-quels-sont-les-deux-sites-les-plus-proches">Exercise 9: A vol d’oiseau, quels sont les deux sites les plus proches ?</h4>
+<p>On observe qu’il y a un total de 8 sites qui acceuillent un total de 4 sports chacun.</p>
+<ul>
+<li><strong>Quel discipline aura lieu sur le plus grand nombre de sites ? Quels sont ces sites ?</strong></li>
+</ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Libraires </span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(geosphere)</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="co">#Séparer les coordonnées géographiques en deux colonnes par la virgule </span></span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>data_ex <span class="ot">&lt;-</span> <span class="fu">separate</span>(data_ex, geo_point, <span class="at">into =</span> <span class="fu">c</span>(<span class="st">"lat"</span>, <span class="st">"long"</span>), <span class="at">sep =</span> <span class="st">", "</span>)</span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Fonction pour calculer la distance euclidienne</span></span>
-<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>data_ex<span class="sc">$</span>lat <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(data_ex<span class="sc">$</span>lat)</span>
-<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>data_ex<span class="sc">$</span>long <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(data_ex<span class="sc">$</span>long)</span>
-<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>distances <span class="ot">&lt;-</span> <span class="fu">distHaversine</span>(data_ex[, <span class="fu">c</span>(<span class="st">"long"</span>, <span class="st">"lat"</span>)])</span>
-<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(distances)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Conter la fréquence de chaque discipline</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>frequence_disciplines <span class="ot">&lt;-</span> <span class="fu">table</span>(<span class="fu">unlist</span>(<span class="fu">strsplit</span>(data_ex<span class="sc">$</span>sports, <span class="st">","</span>)))</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Discipline avec plus grande fréquence</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>discipline_plus_frequente <span class="ot">&lt;-</span> <span class="fu">names</span>(frequence_disciplines)[<span class="fu">which.max</span>(frequence_disciplines)]</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Résultat</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"La discipline qui aura lieu sur le plus grand nombre de sites est:"</span>, discipline_plus_frequente, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>La discipline qui aura lieu sur le plus grand nombre de sites est: Athlétisme </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filtrer les sites qui incluent le mot "Athlétisme" dans la colonne Discipline</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>sites_atletisme <span class="ot">&lt;-</span> data_ex[<span class="fu">grepl</span>(<span class="st">"Athlétisme"</span>, data_ex<span class="sc">$</span>sports, <span class="at">ignore.case =</span> <span class="cn">TRUE</span>), <span class="fu">c</span>(<span class="st">"nom"</span>, <span class="st">"sports"</span>)]</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Imprimer les résultats</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Les sites où l'athlétisme aura lieu sont les suivants:</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Les sites où l'athlétisme aura lieu sont les suivants:</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(sites_atletisme)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                                   nom
+2                      Stade de France
+6  Terrain des Essences - La Courneuve
+9                            Invalides
+11                         Pont d'Iéna
+25             Hôtel de ville de Paris
+                                                       sports
+2                            Athlétisme,Para athlétisme,Rugby
+6                                             Para athlétisme
+9  Tir à l'arc,Para tir à l'arc,Athlétisme,Cyclisme sur route
+11                              Cyclisme sur route,Athlétisme
+25                                                 Athlétisme</code></pre>
+</div>
+</div>
+<p>On voit que l’athlétisme aura lieu sur 5 sites à Paris.</p>
+<ul>
+<li><strong>Quels sont les deux sites les plus proches ?</strong></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Libraires </span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(geosphere)</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="co">#Séparer les coordonnées géographiques en deux colonnes par la virgule </span></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>data_ex <span class="ot">&lt;-</span> <span class="fu">separate</span>(data_ex, geo_point, <span class="at">into =</span> <span class="fu">c</span>(<span class="st">"lat"</span>, <span class="st">"long"</span>), <span class="at">sep =</span> <span class="st">", "</span>)</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Fonction pour calculer la distance euclidienne</span></span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>data_ex<span class="sc">$</span>lat <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(data_ex<span class="sc">$</span>lat)</span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>data_ex<span class="sc">$</span>long <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(data_ex<span class="sc">$</span>long)</span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>distances <span class="ot">&lt;-</span> <span class="fu">distHaversine</span>(data_ex[, <span class="fu">c</span>(<span class="st">"long"</span>, <span class="st">"lat"</span>)])</span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(distances)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] 12109.0289  2007.5022 22017.3512 28908.6007  1204.2823 36658.5531
  [7] 26702.8086   422.2544 11450.5703 13052.7520  6674.7313 18001.9809
@@ -362,25 +426,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 [19] 27022.4177 10476.8609 12176.4034 11437.7799   419.6006  5441.5332
 [25]  9902.1865 30003.3283 42913.1029  5092.1872 16782.0752 23146.9519</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Matrice pour garder les distances</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>distances <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="cn">NA</span>, <span class="at">nrow =</span> <span class="fu">nrow</span>(data_ex), <span class="at">ncol =</span> <span class="fu">nrow</span>(data_ex))</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculer les distances entre toutes les coordonnées avec un boucle </span></span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>(<span class="fu">nrow</span>(data_ex) <span class="sc">-</span> <span class="dv">1</span>)) {</span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (j <span class="cf">in</span> (i <span class="sc">+</span> <span class="dv">1</span>)<span class="sc">:</span><span class="fu">nrow</span>(data_ex)) {</span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>    distances[i, j] <span class="ot">&lt;-</span> <span class="fu">distHaversine</span>(</span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>      <span class="fu">c</span>(data_ex<span class="sc">$</span>lat[i], data_ex<span class="sc">$</span>long[i]),</span>
-<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>      <span class="fu">c</span>(data_ex<span class="sc">$</span>lat[j], data_ex<span class="sc">$</span>long[j])</span>
-<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>    distances[j, i] <span class="ot">&lt;-</span> distances[i, j]  <span class="co"># Symétrie</span></span>
-<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Convertir la matirce en dataframe</span></span>
-<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>distancies_df <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(distances)</span>
-<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Imprimer le résultat</span></span>
-<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(distancies_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Matrice pour garder les distances</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>distances <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="cn">NA</span>, <span class="at">nrow =</span> <span class="fu">nrow</span>(data_ex), <span class="at">ncol =</span> <span class="fu">nrow</span>(data_ex))</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculer les distances entre toutes les coordonnées avec un boucle </span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>(<span class="fu">nrow</span>(data_ex) <span class="sc">-</span> <span class="dv">1</span>)) {</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (j <span class="cf">in</span> (i <span class="sc">+</span> <span class="dv">1</span>)<span class="sc">:</span><span class="fu">nrow</span>(data_ex)) {</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>    distances[i, j] <span class="ot">&lt;-</span> <span class="fu">distHaversine</span>(</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>      <span class="fu">c</span>(data_ex<span class="sc">$</span>lat[i], data_ex<span class="sc">$</span>long[i]),</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>      <span class="fu">c</span>(data_ex<span class="sc">$</span>lat[j], data_ex<span class="sc">$</span>long[j])</span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>    distances[j, i] <span class="ot">&lt;-</span> distances[i, j]  <span class="co"># Symétrie</span></span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Convertir la matirce en dataframe</span></span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a>distances_df <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(distances)</span>
+<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Imprimer le résultat</span></span>
+<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(distances_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>           V1         V2        V3        V4         V5        V6        V7
 1          NA 15056.7389 12805.617 19257.081 22271.8538 20748.364 32305.277
@@ -543,46 +607,61 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 30 24344.28919        NA 34240.231
 31 58554.13520 34240.231        NA</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Le sites les plus proches</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>min_distance <span class="ot">&lt;-</span> <span class="fu">min</span>(distancies_df, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>min_distance </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Le sites les plus proches</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>min_distance <span class="ot">&lt;-</span> <span class="fu">min</span>(distances_df, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>min_distance </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 91.69166</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Min distances</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>min_distannce <span class="ot">&lt;-</span> <span class="fu">which</span>(distancies_df<span class="sc">==</span>min_distance, <span class="at">arr.ind=</span><span class="cn">TRUE</span>)</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>min_distannce</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Min distances</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>min_distannce <span class="ot">&lt;-</span> <span class="fu">which</span>(distances_df<span class="sc">==</span>min_distance, <span class="at">arr.ind=</span><span class="cn">TRUE</span>)</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>min_distannce</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     row col
 [1,]  29  19
 [2,]  19  29</code></pre>
 </div>
 </div>
-<p>On observe que la distance minimale est de 91.69 km, identifiée par min_distance. Min_distannce permet d’identifier la ligne et la colonne de la valeur 91.69 au sein de la matrice. Cela correspond aux noms des sites des colonnes 19 et 29 du dataframe data_ex. On observe que Stade BMX de Saint-Quentin-en-Yvelines et Vélodrome National de Saint-Quentin-en-Yvelines sont les sites les plus proches.</p>
-</section>
-<section id="exercise-10-quels-sont-les-sites-les-plus-éloignés" class="level4">
-<h4 class="anchored" data-anchor-id="exercise-10-quels-sont-les-sites-les-plus-éloignés">Exercise 10: Quels sont les sites les plus éloignés</h4>
+<p>On observe que la distance minimale est de 91.69, identifiée par min_distance. Min_distannce permet d’identifier la ligne et la colonne de la valeur 91.69 au sein de la matrice. Cela correspond aux noms des sites des colonnes 19 et 29 du dataframe data_ex. Stade BMX de Saint-Quentin-en-Yvelines et Vélodrome National de Saint-Quentin-en-Yvelines sont les sites les plus proches.</p>
+<ul>
+<li><strong>Quels sont les sites les plus éloignés</strong></li>
+</ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>max_distance <span class="ot">&lt;-</span> <span class="fu">max</span>(distancies_df, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(max_distance)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>max_distance <span class="ot">&lt;-</span> <span class="fu">max</span>(distances_df, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(max_distance)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 74882.55</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>max_distannce <span class="ot">&lt;-</span> <span class="fu">which</span>(distancies_df<span class="sc">==</span>max_distance, <span class="at">arr.ind=</span><span class="cn">TRUE</span>)</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>max_distannce</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>max_distannce <span class="ot">&lt;-</span> <span class="fu">which</span>(distances_df<span class="sc">==</span>max_distance, <span class="at">arr.ind=</span><span class="cn">TRUE</span>)</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>max_distannce</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     row col
 [1,]  27   7
 [2,]   7  27</code></pre>
 </div>
 </div>
-<p>On observe que Colline d’Elancourt (7) et Stade Nautique (27) sont les sites les plus éloignés avec une distance de 74882.55 km.</p>
-</section>
-<section id="exercise-11" class="level4">
-<h4 class="anchored" data-anchor-id="exercise-11">Exercise 11:</h4>
+<p>On observe que Colline d’Elancourt (7) et Stade Nautique (27) sont les sites les plus éloignés avec une distance de 74882.55.</p>
+<ul>
+<li><strong>Appartement situé au barycentre de l’ensemble des sites olympiques</strong></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculer les coordonnées moyennes (barycentriques)</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>barycentre <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">mean</span>(data_ex<span class="sc">$</span>lat), <span class="fu">mean</span>(data_ex<span class="sc">$</span>long))</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Trouver le site le plus proche du barycentre</span></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>site_proche_barycentre <span class="ot">&lt;-</span> data_ex[<span class="fu">which.min</span>(geosphere<span class="sc">::</span><span class="fu">distVincentySphere</span>(barycentre, <span class="fu">cbind</span>(data_ex<span class="sc">$</span>lat, data_ex<span class="sc">$</span>long))), ]</span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>site_proche_barycentre</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>        lat     long               nom   sites_olympiques_paralympiques
+18 48.85723 2.296084 Stade Tour Eiffel Site olympique,Site paralympique
+                         sports
+18 Volleyball de plage,Cécifoot</code></pre>
+</div>
+</div>
+<p>Le Stade Tour Eiffel se situe au barycentre de l’ensemble des sites olympiques.</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

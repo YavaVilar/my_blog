@@ -1,22 +1,25 @@
 ---
-title: "Post With Code"
+title: "Package Olympics Weather"
 author: "Yava Vilar Valera"
 date: "2024-03-01"
-categories: [news, code, analysis]
-image: "image.jpg"
+toc: true
 ---
 
-Le package **`olympicsWeather`** est une bibliothèque R dédiée à la récupération de prévisions météorologiques en temps réel pour différents sites olympiques existants. Il offre des fonctionnalités permettant d'obtenir des données détaillées sur la température, la température ressentie, la probabilité de précipitations et les précipitations effectives.
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=TRUE, warning=FALSE, errors=FALSE, message=FALSE, results=TRUE, fig.width=8, fig.height=6)
+library(tidygeocoder)
+library(httr2)
+library(tibble)
 
-### **Installation du Package**
-
-Pour installer le package **`olympicsWeather`** depuis GitHub, vous pouvez utiliser le package **`remotes`**. Assurez-vous d'avoir le package **`remotes`** installé au préalable. Si ce n'est pas le cas, vous pouvez l'installer avec la commande suivante :
+```
 
 ## Librarie OlympicsWeather
 
 Le package **`olympicsWeather`** est une bibliothèque R dédiée à la récupération de prévisions météorologiques en temps réel pour différents sites olympiques existants. Il offre des fonctionnalités permettant d'obtenir des données détaillées sur la température, la température ressentie, la probabilité de précipitations et les précipitations effectives.
 
-### **Installation du Package**
+![](/ol%20weather.jpg){fig-align="center" width="365"}
+
+#### **Installation du Package**
 
 Pour installer le package **`olympicsWeather`** depuis GitHub, vous pouvez utiliser le package **`remotes`**. Assurez-vous d'avoir le package **`remotes`** installé au préalable. Si ce n'est pas le cas, vous pouvez l'installer avec la commande suivante :
 
@@ -33,9 +36,24 @@ remotes::install_github("YavaVilar/olympicsWeather")
 ## Prévision de la météo pour le stade de France
 
 ```{r}
-library(olympicsWeather)
-library(tidygeocoder)
-library(httr2)
-library(tibble)
-meteo_stade_france <- get_forecast("France")
+meteo_stade_france <- get_forecast("stade de France")
+
+meteo_stade_france
+```
+
+## Prévision de la météo pour Tahiti
+
+```{r}
+
+meteo_Tahiti <- get_forecast("Tahiti")
+meteo_Tahiti
+
+```
+
+## Prévision de la météo pour les coordonnées 43.276703, 5.334791
+
+```{r}
+
+meteo_coordonnées <- get_forecast("43.276703,5.334791")
+meteo_coordonnées
 ```
