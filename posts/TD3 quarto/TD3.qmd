@@ -1,6 +1,6 @@
 ---
 title: "Exercices Semaine 3"
-date: "01/03/2024"
+date: "03/01/2024"
 toc: true
 author: Yava Vilar Valera
 ---

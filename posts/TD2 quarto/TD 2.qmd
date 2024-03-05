@@ -13,7 +13,7 @@ knitr::opts_chunk$set(echo=TRUE, warning=FALSE, errors=FALSE, message=FALSE, res
 
 ![](images/clipboard-767475626.png){fig-align="center" width="431"}
 
-Ces exercises ont pour but l'iplémentation des fonctions pour analyser les données historiques des jeux olympiques.
+Ces exercises ont pour but l'implémentation des fonctions pour analyser les données historiques des jeux olympiques.
 
 -   **Lancer la commande suivante**. **Que contient l'objet?**
 
@@ -26,16 +26,11 @@ list_tables <-
   session("https://fr.wikipedia.org/wiki/Liste_des_m%C3%A9daill%C3%A9s_olympiques") |>
   html_elements(".wikitable") |>
   html_table()
-
-list_tables
 ```
 
 L'objet contient une liste avec 6 éléments contenant différentes bases de données.
 
--   **On s'intéresse à la première table. Créer un objet intitulédata_medailles_sport_ete contenant le premier élément de list_tables. La table n’est pas bien formattée. Supprimer la première colonne, les noms de colonnes et la première ligne. Renommer les colonnes en c("Discipline", "Annees", "Editions",
-    "Epreuves_2020", "Or", "Argent", "Bronze", "Total", "Athletes_medailles",
-    "Athletes_or"). Les colonnes Editions, Epreuves_2020, Or, Argent, Bronze, Total
-    seront converties en colonnes d’entiers.**
+-   **On s'intéresse à la première table. Créer un objet intitulédata_medailles_sport_ete contenant le premier élément de list_tables. La table n’est pas bien formattée. Supprimer la première colonne, les noms de colonnes et la première ligne. Renommer les colonnes en c("Discipline", "Annees", "Editions", "Epreuves_2020", "Or", "Argent", "Bronze", "Total", "Athletes_medailles", "Athletes_or"). Les colonnes Editions, Epreuves_2020, Or, Argent, Bronze, Total seront converties en colonnes d’entiers.**
 
 ```{r}
 #Créer data_medailles_sport_ete contenant la première table de la liste 
@@ -59,7 +54,7 @@ data_medailles_sport_ete[, 3:8] <- lapply(data_medailles_sport_ete[, 3:8], as.in
 
 ```
 
--    **Les 3 disciplines avec le plus de médailles distribuées**
+-   **Les 3 disciplines avec le plus de médailles distribuées**
 
 ```{r}
 library(tidyverse)
@@ -101,5 +96,5 @@ calcul_nb_editions_int(1896) ##Mettre l'année de commence au programme.
 
 ```
 
-```{}
+```         
 ```

@@ -9,7 +9,7 @@
 <meta name="author" content="Yava Vilar valera">
 <meta name="dcterms.date" content="2024-03-02">
 
-<title>my_blog - Exercices Semaine 2</title>
+<title>R avancé et GitHub - Exercices Semaine 2</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -108,7 +108,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
     <a class="navbar-brand" href="../../index.html">
-    <span class="navbar-title">my_blog</span>
+    <span class="navbar-title">R avancé et GitHub</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -121,6 +121,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link" href="https://github.com/YavaVilar" rel="" target=""><i class="bi bi-github" role="img">
 </i> 
  <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../vilarvaleray@gmail.com" rel="" target="">
+ <span class="menu-text">Email</span></a>
   </li>  
 </ul>
             <div class="quarto-navbar-tools">
@@ -183,7 +187,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><img src="images/clipboard-767475626.png" class="img-fluid figure-img" width="431"></p>
 </figure>
 </div>
-<p>Ces exercises ont pour but l’iplémentation des fonctions pour analyser les données historiques des jeux olympiques.</p>
+<p>Ces exercises ont pour but l’implémentation des fonctions pour analyser les données historiques des jeux olympiques.</p>
 <ul>
 <li><strong>Lancer la commande suivante</strong>. <strong>Que contient l’objet?</strong></li>
 </ul>
@@ -194,164 +198,44 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>list_tables <span class="ot">&lt;-</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">session</span>(<span class="st">"https://fr.wikipedia.org/wiki/Liste_des_m%C3%A9daill%C3%A9s_olympiques"</span>) <span class="sc">|&gt;</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">html_elements</span>(<span class="st">".wikitable"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">html_table</span>()</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>list_tables</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[[1]]
-# A tibble: 31 × 11
-   Discipline   Discipline   Années `Nombre de` `Nombre de` `médailles décernés`
-   &lt;chr&gt;        &lt;chr&gt;        &lt;chr&gt;  &lt;chr&gt;       &lt;chr&gt;       &lt;chr&gt;               
- 1 "Discipline" Discipline   Années Éditions    Épreuves(e… Or                  
- 2 ""           Athlétisme   Depui… 29          48          1028                
- 3 ""           Aviron       Depui… 28          14          269                 
- 4 ""           Badminton    Depui… 8           5           39                  
- 5 ""           Basket-ball  Depui… 20          4           32                  
- 6 ""           Boxe         1904,… 26          13          266                 
- 7 ""           Canoë-kayak  Depui… 20          16          242                 
- 8 ""           Cyclisme(ho… Depui… 29          22          263                 
- 9 ""           Équitation   1900,… 26          6           151                 
-10 ""           Escrime      Depui… 29          12          223                 
-# ℹ 21 more rows
-# ℹ 5 more variables: `médailles décernés` &lt;chr&gt;, `médailles décernés` &lt;chr&gt;,
-#   `médailles décernés` &lt;chr&gt;,
-#   `Athlète(s) avec le plus de médailles (Or-Argent-Bronze)` &lt;chr&gt;,
-#   `Athlète(s) avec le plus de médailles d'or` &lt;chr&gt;
-
-[[2]]
-# A tibble: 16 × 11
-   Discipline   Discipline   Années `Nombre de` `Nombre de` `médailles décernés`
-   &lt;chr&gt;        &lt;chr&gt;        &lt;chr&gt;  &lt;chr&gt;       &lt;chr&gt;       &lt;chr&gt;               
- 1 "Discipline" Discipline   Années Éditions    épreuves e… Or                  
- 2 ""           Biathlon     1924,… 16          11          54                  
- 3 ""           Bobsleigh    1924-… 21          3           39                  
- 4 ""           Combiné nor… Depui… 22          3           28                  
- 5 ""           Curling      1924,… 4           2           7                   
- 6 ""           Hockey sur … Été&nbsp;:… 23          2           24                  
- 7 ""           Luge         Depui… 14          4           37                  
- 8 ""           Patinage ar… Été&nbsp;:… 24          4           77                  
- 9 ""           Patinage de… Depui… 22          12          152                 
-10 ""           Patinage de… Depui… 7           8           32                  
-11 ""           Saut à ski   Depui… 22          4           38                  
-12 ""           Skeleton     1924,… 6           2           6                   
-13 ""           Ski acrobat… Depui… 7           10          18                  
-14 ""           Ski alpin    Depui… 19          10          132                 
-15 ""           Ski de fond  Depui… 22          12          134                 
-16 ""           Snowboard    Depui… 5           10          14                  
-# ℹ 5 more variables: `médailles décernés` &lt;chr&gt;, `médailles décernés` &lt;chr&gt;,
-#   `médailles décernés` &lt;chr&gt;,
-#   `Athlète(s) avec le plus de médailles (Or-Argent-Bronze)` &lt;chr&gt;,
-#   `Athlète(s) avec le plus de médailles d'or` &lt;chr&gt;
-
-[[3]]
-# A tibble: 14 × 8
-   Discipline   Discipline       Années `Nombre d'éditions` `Médailles décernés`
-   &lt;chr&gt;        &lt;chr&gt;            &lt;chr&gt;  &lt;chr&gt;               &lt;chr&gt;               
- 1 "Discipline" Discipline       Années Nombre d'éditions   Or                  
- 2 ""           Baseball         1992–… 5                   5                   
- 3 ""           Pelote basque    1900   1                   1                   
- 4 ""           Cricket          1900   1                   1                   
- 5 ""           Croquet          1900   1                   3                   
- 6 ""           Jeu de paume     1908   1                   1                   
- 7 ""           Crosse           1904–… 2                   2                   
- 8 ""           Polo             1900,… 5                   5                   
- 9 ""           Jeu de raquettes 1908   1                   2                   
-10 ""           Roque            1904   1                   1                   
-11 ""           Rugby à XV       1900,… 4                   4                   
-12 ""           Softball         1996–… 4                   4                   
-13 ""           Tir à la corde   1900–… 5                   5                   
-14 ""           Motonautisme     1908   5                   3                   
-# ℹ 3 more variables: `Médailles décernés` &lt;chr&gt;, `Médailles décernés` &lt;chr&gt;,
-#   `Médailles décernés` &lt;chr&gt;
-
-[[4]]
-# A tibble: 2 × 8
-  Discipline   Discipline        Années `Nombre d'éditions` `Médailles décernés`
-  &lt;chr&gt;        &lt;chr&gt;             &lt;chr&gt;  &lt;chr&gt;               &lt;chr&gt;               
-1 "Discipline" Discipline        Années Nombre d'éditions   Or                  
-2 ""           Patrouille milit… 1924   1                   1                   
-# ℹ 3 more variables: `Médailles décernés` &lt;chr&gt;, `Médailles décernés` &lt;chr&gt;,
-#   `Médailles décernés` &lt;chr&gt;
-
-[[5]]
-# A tibble: 30 × 11
-   Jeux  Médaille  Médaille Hôte     Nombred'épreuves(ave…¹ `Médailles décernés`
-   &lt;chr&gt; &lt;chr&gt;     &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;                  &lt;chr&gt;               
- 1 Jeux  Médaille  Médaille Hôte     Nombred'épreuves(avec… Or                  
- 2 1896  médaillés tableau  Athènes… 43                     43                  
- 3 1900  médaillés tableau  Paris, … 95                     90                  
- 4 1904  médaillés tableau  Saint-L… 91                     96                  
- 5 1908  médaillés tableau  Londres… 110                    110                 
- 6 1912  médaillés tableau  Stockho… 102                    103                 
- 7 1920  médaillés tableau  Anvers,… 154                    156                 
- 8 1924  médaillés tableau  Paris, … 126                    126                 
- 9 1928  médaillés tableau  Amsterd… 109                    111                 
-10 1932  médaillés tableau  Los Ang… 117                    116                 
-# ℹ 20 more rows
-# ℹ abbreviated name: ¹​`Nombred'épreuves(avec médailles)`
-# ℹ 5 more variables: `Médailles décernés` &lt;chr&gt;, `Médailles décernés` &lt;chr&gt;,
-#   `Médailles décernés` &lt;chr&gt;,
-#   `Athlète(s) avec le plus de médailles (Or-Argent-Bronze)` &lt;chr&gt;,
-#   `Athlète(s) avec le plus de médailles d'or` &lt;chr&gt;
-
-[[6]]
-# A tibble: 24 × 11
-   Jeux  Médaille  Médaille Hôte     Nombred'épreuves(ave…¹ `Médailles décernés`
-   &lt;chr&gt; &lt;chr&gt;     &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;                  &lt;chr&gt;               
- 1 Jeux  Médaille  Médaille Hôte     Nombred'épreuves(avec… Or                  
- 2 1924  médaillés tableau  Chamoni… 16                     16                  
- 3 1928  médaillés tableau  Saint-M… 14                     14                  
- 4 1932  médaillés tableau  Lake Pl… 14                     14                  
- 5 1936  médaillés tableau  Garmisc… 17                     17                  
- 6 1948  médaillés tableau  Saint-M… 22                     22                  
- 7 1952  médaillés tableau  Oslo, N… 22                     22                  
- 8 1956  médaillés tableau  Cortina… 24                     25                  
- 9 1960  médaillés tableau  Squaw V… 27                     28                  
-10 1964  médaillés tableau  Innsbru… 34                     34                  
-# ℹ 14 more rows
-# ℹ abbreviated name: ¹​`Nombred'épreuves(avec médailles)`
-# ℹ 5 more variables: `Médailles décernés` &lt;chr&gt;, `Médailles décernés` &lt;chr&gt;,
-#   `Médailles décernés` &lt;chr&gt;,
-#   `Athlète(s) avec le plus de médailles (Or-Argent-Bronze)` &lt;chr&gt;,
-#   `Athlète(s) avec le plus de médailles d'or` &lt;chr&gt;</code></pre>
-</div>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">html_table</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>L’objet contient une liste avec 6 éléments contenant différentes bases de données.</p>
 <ul>
 <li><strong>On s’intéresse à la première table. Créer un objet intitulédata_medailles_sport_ete contenant le premier élément de list_tables. La table n’est pas bien formattée. Supprimer la première colonne, les noms de colonnes et la première ligne. Renommer les colonnes en c(“Discipline”, “Annees”, “Editions”, “Epreuves_2020”, “Or”, “Argent”, “Bronze”, “Total”, “Athletes_medailles”, “Athletes_or”). Les colonnes Editions, Epreuves_2020, Or, Argent, Bronze, Total seront converties en colonnes d’entiers.</strong></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Créer data_medailles_sport_ete contenant la première table de la liste </span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>data_medailles_sport_ete <span class="ot">&lt;-</span> list_tables[[<span class="dv">1</span>]]</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Supprimer la première colonne, les noms de colonnes et la première ligne</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>data_medailles_sport_ete <span class="ot">&lt;-</span> data_medailles_sport_ete[<span class="sc">-</span><span class="dv">1</span>,<span class="sc">-</span><span class="dv">1</span>]</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(data_medailles_sport_ete) <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Renommer des colonnes </span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(data_medailles_sport_ete) <span class="ot">&lt;-</span>  <span class="fu">c</span>(<span class="st">"Discipline"</span>, <span class="st">"Annees"</span>, <span class="st">"Editions"</span>,</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Epreuves_2020"</span>, <span class="st">"Or"</span>, <span class="st">"Argent"</span>, <span class="st">"Bronze"</span>, <span class="st">"Total"</span>, <span class="st">"Athletes_medailles"</span>,</span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Athletes_or"</span>)</span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co">#Coder en integer </span></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>data_medailles_sport_ete[, <span class="dv">3</span><span class="sc">:</span><span class="dv">8</span>] <span class="ot">&lt;-</span> <span class="fu">lapply</span>(data_medailles_sport_ete[, <span class="dv">3</span><span class="sc">:</span><span class="dv">8</span>], as.integer)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Créer data_medailles_sport_ete contenant la première table de la liste </span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>data_medailles_sport_ete <span class="ot">&lt;-</span> list_tables[[<span class="dv">1</span>]]</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Supprimer la première colonne, les noms de colonnes et la première ligne</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>data_medailles_sport_ete <span class="ot">&lt;-</span> data_medailles_sport_ete[<span class="sc">-</span><span class="dv">1</span>,<span class="sc">-</span><span class="dv">1</span>]</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(data_medailles_sport_ete) <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Renommer des colonnes </span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(data_medailles_sport_ete) <span class="ot">&lt;-</span>  <span class="fu">c</span>(<span class="st">"Discipline"</span>, <span class="st">"Annees"</span>, <span class="st">"Editions"</span>,</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Epreuves_2020"</span>, <span class="st">"Or"</span>, <span class="st">"Argent"</span>, <span class="st">"Bronze"</span>, <span class="st">"Total"</span>, <span class="st">"Athletes_medailles"</span>,</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Athletes_or"</span>)</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co">#Coder en integer </span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>data_medailles_sport_ete[, <span class="dv">3</span><span class="sc">:</span><span class="dv">8</span>] <span class="ot">&lt;-</span> <span class="fu">lapply</span>(data_medailles_sport_ete[, <span class="dv">3</span><span class="sc">:</span><span class="dv">8</span>], as.integer)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li><strong>Les 3 disciplines avec le plus de médailles distribuées</strong></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">#Option avec le tidyverse</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>Top3_disciplines <span class="ot">&lt;-</span> data_medailles_sport_ete <span class="sc">|&gt;</span> <span class="fu">arrange</span>(<span class="fu">desc</span>(Total)) <span class="sc">|&gt;</span> <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>)</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>Top3_disciplines</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">#Option avec le tidyverse</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>Top3_disciplines <span class="ot">&lt;-</span> data_medailles_sport_ete <span class="sc">|&gt;</span> <span class="fu">arrange</span>(<span class="fu">desc</span>(Total)) <span class="sc">|&gt;</span> <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>Top3_disciplines</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 10
   Discipline             Annees Editions Epreuves_2020    Or Argent Bronze Total
@@ -361,9 +245,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 3 Lutte                  1896,…       28            18   430    429    499  1358
 # ℹ 2 more variables: Athletes_medailles &lt;chr&gt;, Athletes_or &lt;chr&gt;</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Une autre option avec la fct orderet regarder les 3 premiers</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">order</span>(data_medailles_sport_ete<span class="sc">$</span>Total, <span class="at">decreasing=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Une autre option avec la fct orderet regarder les 3 premiers</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">order</span>(data_medailles_sport_ete<span class="sc">$</span>Total, <span class="at">decreasing=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1]  1 18 17 12  5 25  2  7  6 14  9 16 28  8 21 23 26 22 20  3 24 15 10  4 29
 [26] 30 13 19 27 11</code></pre>
@@ -374,8 +258,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Les 3 disciplines avec le moins d’épreuves en 2020</strong></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>data_medailles_sport_ete_ordonne_epreuves2020 <span class="ot">&lt;-</span> data_medailles_sport_ete <span class="sc">|&gt;</span> <span class="fu">arrange</span>(Epreuves_2020) <span class="sc">|&gt;</span> <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>data_medailles_sport_ete_ordonne_epreuves2020 <span class="do">##Sélectionner les 3 dernières</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>data_medailles_sport_ete_ordonne_epreuves2020 <span class="ot">&lt;-</span> data_medailles_sport_ete <span class="sc">|&gt;</span> <span class="fu">arrange</span>(Epreuves_2020) <span class="sc">|&gt;</span> <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>data_medailles_sport_ete_ordonne_epreuves2020 <span class="do">##Sélectionner les 3 dernières</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 10
   Discipline Annees             Editions Epreuves_2020    Or Argent Bronze Total
@@ -391,11 +275,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Calculer une fonction depuis qui représente depuis quelle année l’édition est au programme</strong></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>calcul_nb_editions_int <span class="ot">&lt;-</span> <span class="cf">function</span>(depuis) {</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="dv">2024</span><span class="sc">-</span>depuis)</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="fu">calcul_nb_editions_int</span>(<span class="dv">1896</span>) <span class="do">##Mettre l'année de commence au programme.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>calcul_nb_editions_int <span class="ot">&lt;-</span> <span class="cf">function</span>(depuis) {</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="dv">2024</span><span class="sc">-</span>depuis)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">calcul_nb_editions_int</span>(<span class="dv">1896</span>) <span class="do">##Mettre l'année de commence au programme.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 128</code></pre>
 </div>

@@ -47,7 +47,7 @@ meteo_stade_france <- get_forecast("stade de France")
 meteo_stade_france
 ```
 
-![](/GRAPHIQUE STADE DE FRANCE.png){width="548"}
+![](/GRAPHIQUE STADE DE FRANCE.png){width="667"}
 
 ## Prévision de la météo pour Tahiti
 
@@ -62,7 +62,7 @@ meteo_Tahiti
 
 ```
 
-![](/GRAPHIQUE TAHITI.png){fig-align="left" width="559"}
+![](/GRAPHIQUE TAHITI.png){fig-align="left" width="670"}
 
 ## Prévision de la météo pour les coordonnées 43.276703, 5.334791
 
@@ -77,4 +77,4 @@ meteo_coordonnées
 
 ```
 
-![](/GRAPHIQUE COORDONEES.png){width="553"}
+![](/GRAPHIQUE COORDONEES.png){width="678"}

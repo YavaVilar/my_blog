@@ -157,9 +157,6 @@ for (i in 1:(nrow(data_ex) - 1)) {
 # Convertir la matirce en dataframe
 distances_df <- as.data.frame(distances)
 
-# Imprimer le résultat
-print(distances_df)
-
 #Le sites les plus proches
 min_distance <- min(distances_df, na.rm=TRUE)
 min_distance 

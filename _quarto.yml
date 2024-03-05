@@ -3,17 +3,23 @@ project:
   output-dir: .
 
 website:
-  title: "my_blog"
+  title: "R avancé et GitHub"
   navbar:
       right:
       - icon: github
         href: https://github.com/YavaVilar
+      - text: Email
+        url: "vilarvaleray@gmail.com"
+
+page-footer:
+    center:
+    - text: Email
+      url: "vilarvaleray@gmail.com"
+
 format:
   html:
-    theme: flatly
+    theme: [sandstone, _variables.scss]
     css: styles.css
     toc: true
-    highlight-style: a11y
 
 editor: visual
-
