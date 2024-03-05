@@ -3,23 +3,24 @@ project:
   output-dir: .
 
 website:
-  title: "R avancé et GitHub"
+  title: "Présentation du blog"
   navbar:
       right:
       - icon: github
         href: https://github.com/YavaVilar
-      - text: Email
-        url: "vilarvaleray@gmail.com"
-
+      - icon: linkedin
+        href: https://www.linkedin.com/in/yava-vilar-valera-496999271/
+      left:
+      - href: about.qmd
+      - href: R avancé et Git présentation.qmd
 page-footer:
-    center:
-    - text: Email
-      url: "vilarvaleray@gmail.com"
+    left:
+      - href: https://www.quarto.org
+        text: Built with Quarto
 
 format:
   html:
-    theme: [sandstone, _variables.scss]
-    css: styles.css
-    toc: true
+    theme: [litera, variables.scss]
+    highlight-style: nord
 
 editor: visual

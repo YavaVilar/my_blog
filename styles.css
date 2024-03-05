@@ -1,89 +1,82 @@
-// Sandstone 5.1.3
-// Bootswatch
 /*-- scss:defaults --*/
-$theme: "sandstone" !default;
-
-//
-// Color system
-//
-
-$white:    #fff !default;
-$gray-100: #f8f9fa !default;
-$gray-200: #f8f5f0 !default;
-$gray-300: #dfd7ca !default;
-$gray-400: #ced4da !default;
-$gray-500: #98978b !default;
-$gray-600: #8e8c84 !default;
-$gray-700: #495057 !default;
-$gray-800: #3e3f3a !default;
-$gray-900: #212529 !default;
-$b-text: #111 !default;
-$black:    #000 !default;
-
-$blue:    #325d88 !default;
-$indigo:  #6610f2 !default;
-$purple:  #6f42c1 !default;
-$pink:    #e83e8c !default;
-$red:     #d9534f !default;
-$orange:  #f47c3c !default;
-$yellow:  #ffc107 !default;
-$green:   #93c54b !default;
-$teal:    #20c997 !default;
-$cyan:    #29abe0 !default;
-
-$primary:       $blue !default;
-$secondary:     $gray-600 !default;
-$success:       $green !default;
-$info:          $cyan !default;
-$warning:       $orange !default;
-$danger:        $red !default;
-$light:         $gray-200 !default;
-$dark:          $gray-800 !default;
-
-$min-contrast-ratio:   2 !default;
-
-// Background
-
-$background-color:                $gray-300 !important;
-
-// Body
-
-$body-color:                $b-text !default;
-
-// Links
-
-$link-color:                $blue !default;
 
 // Fonts
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&family=Inconsolata');
 
-// stylelint-disable-next-line value-keyword-case
-$font-family-sans-serif:      Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
-$headings-font-weight:        400 !default;
+$font-family-sans-serif:  "Crimson Text" !default;
+$font-family-serif:       "Crimson Text" !default;
+$font-family-monospace: "Inconsolata" !default;
+$font-size-base:              1.1rem !default;
 
-// Dropdowns
+// Nav bar
 
-$dropdown-link-color:               $gray-600 !default;
-$dropdown-link-hover-color:         $dropdown-link-color !default;
-$dropdown-link-hover-bg:            $gray-200 !default;
-$dropdown-link-active-color:        $dropdown-link-color !default;
-$dropdown-link-active-bg:           $dropdown-link-hover-bg !default;
+.li.a.dropdown-item {
+  color: "#2B2423";
+}
+
+.dropdown-text {
+  color: #000000;
+}
+
+// Typography
+
+h1.title {
+  font-family: "Crimson Text";
+  font-size: 30px;
+}
+
+h1.title.display-7 {
+  font-family: "Crimson Text";
+}
+
+p.subtitle.lead {
+  text-align: center;
+}
+
+a:href {
+  color: #00ab6b;
+}
+
+a:hover {
+    color: #038252;
+    text-decoration: none;
+}
+
+ Global textual link color.
+
+$link-color:            #E2402E !default;
+
+Link hover color set via `darken()` function.
+$link-hover-color:      darken($link-color, 15%) !default;
+
+ Link decoration.
+$link-decoration: none;
+$link-hover-decoration: none;
+
+$code-block-bg: #2B2423;
+
+.navbar{
+  color: #000000;
+}
 
 
-// Navbar
+.navbar-title {
+  color: black;
+  font-family: "Crimson Text";
+}
 
-$navbar-dark-hover-color:           $white !default;
-$navbar-light-hover-color:          $black !default;
-$navbar-light-active-color:         $black !default;
+a.sidebar-item-text.sidebar-link {
+    color: #FFFFFF;
+}
 
+.navbar li.dropdown-header {
+  text-transform: none;
+}
 
-// Popovers
+.quarto-listing-category {
+    font-family: "Crimson Text";
+}
 
-$popover-header-bg:                 $gray-200 !default;
-
-// Modals
-
-$modal-content-border-color:        $gray-300 !default;
-$modal-header-border-color:         $modal-content-border-color !default;
-
-
-
+.quarto-listing-category-title {
+    font-family: "Crimson Text";
+}

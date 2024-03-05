@@ -11,9 +11,9 @@ knitr::opts_chunk$set(echo=TRUE, warning=FALSE, errors=FALSE, message=FALSE, res
 
 ## Exercices Semaine 2
 
-![](images/clipboard-767475626.png){fig-align="center" width="431"}
-
 Ces exercises ont pour but l'implémentation des fonctions pour analyser les données historiques des jeux olympiques.
+
+![](images/clipboard-767475626.png){fig-align="center" width="431"}
 
 -   **Lancer la commande suivante**. **Que contient l'objet?**
 

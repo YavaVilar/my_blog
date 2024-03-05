@@ -1,12 +1,16 @@
 ---
-title: "Blog des Jeux Olympiques"
-listing:
-  contents: posts
-  sort: "date desc"
-  type: default
-  categories: true
-  sort-ui: true
-  filter-ui: true
-page-layout: full
-title-block-banner: true
+title: "Présentation du blog"
+about:
+  template: jolla
+  links:
+    - icon: github
+      href: https://github.com/YavaVilar
+    - icon: linkedin
+      href: https://www.linkedin.com/in/yava-vilar-valera-496999271/
+    - icon: globe
+      href: https://sites.google.com/view/master-ecap/accueil 
 ---
+
+Ce blog s'inscrit dans le cadre d'un projet réalisé pour le cours R avancé et GitHub au sein du Master d'Econométrie Appliquée à l'Université de Nantes. Vous y trouverez deux sections: La première décrit la façon d'installer la librarie créée par l'autrice sous R nomméé **`olympicsWeather`**, dont son objectif est de prévoir la météo en temps réél de n'importe quelle coordonnée géographique ou adresse fournie par l'utilisateur. Trois exemples de localisation géographique seront montrés. La deuxième section contient trois posts d'articles relatifs aux exercises effectués lors du cours R avancé et GitHub.
+
+Réalisé par : vilarvaleray\@gmail.com

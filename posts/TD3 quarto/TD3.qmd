@@ -12,9 +12,9 @@ knitr::opts_chunk$set(echo=TRUE, warning=FALSE, errors=FALSE, message=FALSE, res
 
 ## Exercises Semaine 3
 
-![](images/clipboard-1669763147.png){fig-align="center" width="442"}
-
 Ce tutorial se concentre sur l'apprentissage d'importation des fichiers avec des formats permettant de gérer de grandes bases de données. De même, les librairies **`dplyr, tidyr, string et lubridate`** seront exploitées pour analyser les informations relatives aux Jeux Olympiques historiques.
+
+![](images/clipboard-1669763147.png){fig-align="center" width="442"}
 
 ```{r, eval=FALSE}
 install.packages("RSQLite")
@@ -87,8 +87,7 @@ colonnes_tokyo_athletes <- dbListFields(con, "tokyo_athletes")
 print(colonnes_tokyo_athletes)
 ```
 
--   **Importer cette table depuis la base de données en utilisant la fonction dbReadTable.
-    Convertir la table en tibble.**
+-   **Importer cette table depuis la base de données en utilisant la fonction dbReadTable. Convertir la table en tibble.**
 
 ```{r}
 
@@ -135,9 +134,7 @@ help("separate_wider_delim")
 separate_wider_delim(tibble_olympics_athletes, cols = Games, delim= " ", names=c("Year", "isSummer"), cols_remove = FALSE)
 ```
 
--   **Créer deux colonnes à partir de la colonne Games. La première colonne Year sera une
-    colonne de type integer contenant l’année des jeux. La deuxième colonne isSummer
-    sera une colonne booléenne qui indiquera si les jeux sont des jeux d’été ou d’hive**r
+-   **Créer deux colonnes à partir de la colonne Games. La première colonne Year sera une colonne de type integer contenant l’année des jeux. La deuxième colonne isSummer sera une colonne booléenne qui indiquera si les jeux sont des jeux d’été ou d’hive**r
 
 ```{r}
 
