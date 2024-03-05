@@ -1,1 +1,15 @@
 /* css styles */
+/* Estilos CSS personalizados */
+body {
+  font-family: "Marriweather", sans-serif;
+  font-size: 15px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1.5;
+  color: #333;
+}
+{/style}
+
+.header {
+    background-color:#FFB6C1;
+}

@@ -1,11 +1,11 @@
 ---
-title: "Jeux Olympiques 2024 à Paris"
+title: "Exercices Semaine 1"
 theme: "Sports et Infrastructures"
 author: "Yava Vilar Valera"
-date: "today"
+date: "03/03/2024"
 ---
 
-## Tutorial 1: Jeux Olympiques 2024 à Paris
+## Exercises Semaine 1
 
 Cet ensemble d'exercices en R se concentre sur l'analyse des données relatives aux infrastructures olympiques des Jeux de 2024 à Paris. Nous utiliserons exclusivement les fonctions de base de R pour explorer, analyser et extraire des informations clés sur les sites olympiques et paralympiques.
 

@@ -1,15 +1,21 @@
 ---
 title: "Exercices Semaine 2"
+date: "03/02/2024"
+author: Yava Vilar valera
+toc: true
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo=TRUE, warning=FALSE, errors=FALSE, message=FALSE, results=TRUE, fig.width=8, fig.height=6)
-
 ```
 
-## TD2
+## Exercices Semaine 2
 
-#### Exercise 1: Lancer la commande suivante
+![](images/clipboard-767475626.png){fig-align="center" width="431"}
+
+Ces exercises ont pour but l'iplémentation des fonctions pour analyser les données historiques des jeux olympiques.
+
+-   **Lancer la commande suivante**. **Que contient l'objet?**
 
 ```{r}
 
@@ -26,7 +32,10 @@ list_tables
 
 L'objet contient une liste avec 6 éléments contenant différentes bases de données.
 
-#### Exercise 2: On s'intéresse à la première table
+-   **On s'intéresse à la première table. Créer un objet intitulédata_medailles_sport_ete contenant le premier élément de list_tables. La table n’est pas bien formattée. Supprimer la première colonne, les noms de colonnes et la première ligne. Renommer les colonnes en c("Discipline", "Annees", "Editions",
+    "Epreuves_2020", "Or", "Argent", "Bronze", "Total", "Athletes_medailles",
+    "Athletes_or"). Les colonnes Editions, Epreuves_2020, Or, Argent, Bronze, Total
+    seront converties en colonnes d’entiers.**
 
 ```{r}
 #Créer data_medailles_sport_ete contenant la première table de la liste 
@@ -50,7 +59,7 @@ data_medailles_sport_ete[, 3:8] <- lapply(data_medailles_sport_ete[, 3:8], as.in
 
 ```
 
-#### Exercise 3: Les 3 disciplines avec le plus de médailles distribuées
+-    **Les 3 disciplines avec le plus de médailles distribuées**
 
 ```{r}
 library(tidyverse)
@@ -69,15 +78,19 @@ order(data_medailles_sport_ete$Total, decreasing=TRUE)
 
 ```
 
-#### Exercise 4: Les 3 disciplines avec le moins d'épreuves en 2020
+L'athléthisme, la natation et la lutte sont les trois disciplines avec le plus de médailles distribuées.
+
+-   **Les 3 disciplines avec le moins d'épreuves en 2020**
 
 ```{r}
 data_medailles_sport_ete_ordonne_epreuves2020 <- data_medailles_sport_ete |> arrange(Epreuves_2020) |> slice(1:3)
-data_medailles_sport_ete_ordonne_epreuves2020 ##Sélectionner les 6 dernières
+data_medailles_sport_ete_ordonne_epreuves2020 ##Sélectionner les 3 dernières
 
 ```
 
-#### Exercise 5: Calculer une fonction depuis qui représente depuis quelle année l'édition est au programme
+Le football, le golf et le handball ont été les disciplines avec le moins d'épreuves en 2020
+
+-   **Calculer une fonction depuis qui représente depuis quelle année l'édition est au programme**
 
 ```{r}
 calcul_nb_editions_int <- function(depuis) {
@@ -88,29 +101,5 @@ calcul_nb_editions_int(1896) ##Mettre l'année de commence au programme.
 
 ```
 
-#### Exercise 6: Proposez une nouvelle fonction calcul_nb_editions_str qui prendra cette fois-ci en entrée des chaînes de caractères
-
-```{r}
-
+```{}
 ```
-
-#### Exercice 8
-
-```{r}
-trouver_max_medaille <- function(dataframe, nom_colonne) {
-    # Vérifier si la colonne existe dans le dataframe
-    if (nom_colonne %in% names(dataframe)) {
-      max_colonne <- max(dataframe[[nom_colonne]])
-      return(max_colonne)
-    } else {
-      message("La colonne spécifiée n'existe pas dans le dataframe.")
-      return(NULL)
-    }
-  }
-
-max_total <- trouver_max_medaille(data_medailles_sport_ete, "Total")
-print(paste("Le maximum de la colonne 'Total' est :", max_total))
-
-```
-
-#### **Exercice 8**

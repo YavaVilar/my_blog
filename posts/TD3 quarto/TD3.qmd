@@ -1,5 +1,8 @@
 ---
 title: "Exercices Semaine 3"
+date: "01/03/2024"
+toc: true
+author: Yava Vilar Valera
 ---
 
 ```{r setup, include=FALSE}
@@ -7,13 +10,17 @@ knitr::opts_chunk$set(echo=TRUE, warning=FALSE, errors=FALSE, message=FALSE, res
 
 ```
 
-## TD3
+## Exercises Semaine 3
 
-```{r}
+![](images/clipboard-1669763147.png){fig-align="center" width="442"}
+
+Ce tutorial se concentre sur l'apprentissage d'importation des fichiers avec des formats permettant de gérer de grandes bases de données. De même, les librairies **`dplyr, tidyr, string et lubridate`** seront exploitées pour analyser les informations relatives aux Jeux Olympiques historiques.
+
+```{r, eval=FALSE}
 install.packages("RSQLite")
 ```
 
-Exercise 1 : Lire le fichier parquet avec la librairie arrow
+-   **Lire le fichier parquet avec la librairie arrow, dimension et nom des colonnes**
 
 ```{r}
 
@@ -28,7 +35,7 @@ dim(data_parquet) #Trois variables et 11085 colonnes
 str(data_parquet) #Colonnes présentes: Name, NOC, Discipline
 ```
 
-Exercise 2: Lire le fichier json avec la libraire jsonlite
+-   **Lire le fichier json avec la libraire jsonlite, dimension et nom des colonnes**
 
 ```{r}
 chemin_acces <- "C:/Users/yavav/OneDrive - Universitat de València/olympics_athletes.json"
@@ -44,7 +51,7 @@ dim(datos_json) #269731 lignes et 13 colonnes
 str(datos_json) #On observe le nom des différentes colonnes
 ```
 
-Exercise 3
+-   **Connexion à la base de données SQL site avec dbConnect**
 
 ```{r}
 library(RSQLite)
@@ -52,14 +59,12 @@ library(RSQLite)
 con <- dbConnect(SQLite(), dbname ="C:/Users/yavav/Documents/R avancé et Git/data.sqlite")
 ```
 
-Exercise 4:
+-   **Créer deux nouvelles tables avec dbListTables**
 
 ```{r}
 tables <- dbListTables(con)
 print(tables) ##Tables: Tokyo_medals et Tokyo_teams
 ```
-
-Exercise 5:
 
 ```{r}
 library(RSQLite)
@@ -67,6 +72,8 @@ library(DBI)
 dbWriteTable(con, "tokyo_athletes", data_parquet, overwrite=TRUE)
 dbWriteTable(con, "olympics_athletes", datos_json, overwrite=TRUE)
 ```
+
+-   **Inspecter la table olympics_athletes en utilisant la fonction dbListFields**
 
 ```{r}
 colonnes_olympics_athletes <- dbListFields(con, "olympics_athletes")
@@ -80,7 +87,8 @@ colonnes_tokyo_athletes <- dbListFields(con, "tokyo_athletes")
 print(colonnes_tokyo_athletes)
 ```
 
-Exercise 7
+-   **Importer cette table depuis la base de données en utilisant la fonction dbReadTable.
+    Convertir la table en tibble.**
 
 ```{r}
 
@@ -104,7 +112,9 @@ tibble_tokyo_athletes <- as_tibble(table_tokyo_athletes)
 
 ```
 
-Exercise 8:
+**Libraires dplyr, tidyr**
+
+-   **Convertir la colonne Sex en variable catégorielle avec la fonction mutate**
 
 ```{r}
 #Importation des libraires 
@@ -117,7 +127,7 @@ tibble_olympics_athletes <- tibble_olympics_athletes %>% mutate(Sex = as.factor(
 
 ```
 
-#### Exercise 9: Créer deux colonnes à partir de la colonne Games
+-   **Créer deux colonnes à partir de la colonne Games**
 
 ```{r}
 help("separate_wider_delim")
@@ -125,7 +135,9 @@ help("separate_wider_delim")
 separate_wider_delim(tibble_olympics_athletes, cols = Games, delim= " ", names=c("Year", "isSummer"), cols_remove = FALSE)
 ```
 
-10. **Calculer la moyenne d’age des athletes pour chacune des éditions des JO d’été. Quelle édition a compté les athlètes les plus jeunes ? Les plus vieux ?**
+-   **Créer deux colonnes à partir de la colonne Games. La première colonne Year sera une
+    colonne de type integer contenant l’année des jeux. La deuxième colonne isSummer
+    sera une colonne booléenne qui indiquera si les jeux sont des jeux d’été ou d’hive**r
 
 ```{r}
 
@@ -136,6 +148,8 @@ tibble_olympics_athletes %>% group_by(Games) %>%
 
 
 ```
+
+-   **Moyenne d’age des athletes pour chacune des éditions des JO d’été. Edition qui a compté avec les athlètes les plus jeunes ? Les plus vieux ?**
 
 ```{r}
 
@@ -148,9 +162,9 @@ tibble_olympics_athletes %>% group_by(Games) %>%
   arrange(desc(mean_age)) %>% slice(1) #Cela ordonne de manière décroissante pour trouver les plus âgés 
 ```
 
-On observe donc que l'édition qui a compté avec les athlètes les plus jeunes ont été les jeux d'hiver 1984, tandis que celle avec les plus vieux, les jeux d'été en 1932.
+On observe que l'édition qui a compté avec les athlètes les plus jeunes ont été les jeux d'hiver 1984, tandis que celle avec les plus vieux, les jeux d'été en 1932.
 
-11. **Quelle est la discipline des JO d’été dont la taille des athlètes féminines est la plus grande ? Quelle a été cette discipline au cours de chacune des éditions ? Calculez le nombre de fois où chaque discipline a été la discipline avec les plus grandes athlètes**
+-   **Discipline des JO d’été dont la taille des athlètes féminines est la plus grande ? Quelle a été cette discipline au cours de chacune des éditions ? Nombre de fois où chaque discipline a été la discipline avec les plus grandes athlètes**
 
 ```{r}
 
@@ -171,6 +185,8 @@ tibble_olympics_athletes %>% filter(Sex=="F" & !is.na(Height)) %>% group_by(Game
   arrange(desc(Height)) %>% slice(1) %>% select(Games, Height, Sport) %>% pull(Sport) %>% table() #On extrait la colonne sport et fait un tablau de fréquence. 
 ```
 
+**stringr, lubridate**
+
 **On dispose du texte suivant** :
 
 ```{r}
@@ -179,20 +195,18 @@ texte <- "Les jeux olympiques d’été se déroulent normalement tous les 4 ans
 entier à Paris."
 ```
 
-12. **Extrayez les dates des différentes éditions des JO**
+-   **Extraire les dates des différentes éditions des JO**
 
 ```{r}
-
 #Chargement de librairie 
 library(stringr)
 ```
 
 ```{r}
-
 str_extract_all(texte, "\\b(\\d{1,2} \\w+ \\d{4})\\b")
 ```
 
-13. **Remplacer les noms des mois par leur numéro pour rendre ces éléments convertibles en date en utilisant la fonction str_replace**
+-   **Remplacer les noms des mois par leur numéro pour rendre ces éléments convertibles en date en utilisant la fonction str_replace**
 
 ```{r}
 str_replace_all(texte, c("Juillet"="7", "Août"="8"))
@@ -216,7 +230,7 @@ dates <- str_extract_all(texte, patron_dates) %>%
 print(dates)
 ```
 
-15. **Combien de jours ont séparés les éditions de Rio et Tokyo ? Et sépareront les éditions de Tokyo et de Paris ? Faites le même calcul en semaines.**
+-   **Combien de jours ont séparés les éditions de Rio et Tokyo ? Et sépareront les éditions de Tokyo et de Paris ? Faites le même calcul en semaines.**
 
 ```{r}
 

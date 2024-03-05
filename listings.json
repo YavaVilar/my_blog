@@ -2,10 +2,10 @@
   {
     "listing": "/index.html",
     "items": [
-      "/posts/TD2 quarto/TD 2.html",
-      "/posts/TD3 quarto/TD3.html",
+      "/posts/post-with-code/index.html",
       "/posts/nouvelle section/TD1.html",
-      "/posts/post-with-code/index.html"
+      "/posts/TD2 quarto/TD 2.html",
+      "/posts/TD3 quarto/TD3.html"
     ]
   }
 ]

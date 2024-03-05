@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Yava Vilar Valera">
-<meta name="dcterms.date" content="2024-03-01">
+<meta name="dcterms.date" content="2024-03-05">
 
 <title>my_blog - Package Olympics Weather</title>
 <style>
@@ -118,12 +118,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/" rel="" target=""><i class="bi bi-github" role="img">
-</i> 
- <span class="menu-text"></span></a>
-  </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com" rel="" target=""><i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://github.com/YavaVilar" rel="" target=""><i class="bi bi-github" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
@@ -155,7 +150,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">March 1, 2024</p>
+        <p class="date">March 5, 2024</p>
       </div>
     </div>
     
@@ -186,39 +181,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="librarie-olympicsweather" class="level2">
 <h2 class="anchored" data-anchor-id="librarie-olympicsweather">Librarie OlympicsWeather</h2>
-<p>Le package <strong><code>olympicsWeather</code></strong> est une bibliothèque R dédiée à la récupération de prévisions météorologiques en temps réel pour différents sites olympiques existants. Il offre des fonctionnalités permettant d’obtenir des données détaillées sur la température, la température ressentie, la probabilité de précipitations et les précipitations effectives.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../..\ol weather.jpg" class="img-fluid figure-img" width="365"></p>
-</figure>
-</div>
+<p>Le package <strong><code>olympicsWeather</code></strong> est une librairie de R dédiée à la récupération de prévisions météorologiques en temps réel pour les différents sites olympiques qui aurant lieu du 26 juillet au 11 août 2024 pour célébrer les Jeux Olympiques 2024 à Paris. Il offre des fonctionnalités permettant d’obtenir des données détaillées sur les conditions météorologiques horaires des 7 prochains jours.</p>
 <section id="installation-du-package" class="level4">
 <h4 class="anchored" data-anchor-id="installation-du-package"><strong>Installation du Package</strong></h4>
-<p>Pour installer le package <strong><code>olympicsWeather</code></strong> depuis GitHub, vous pouvez utiliser le package <strong><code>remotes</code></strong>. Assurez-vous d’avoir le package <strong><code>remotes</code></strong> installé au préalable. Si ce n’est pas le cas, vous pouvez l’installer avec la commande suivante :</p>
+<p>Pour installer le package <strong><code>olympicsWeather</code></strong> depuis GitHub, vous pouvez utiliser le package <strong><code>remotes</code></strong>. Il est nécessaire d’avoir installé le package <strong><code>remotes</code></strong> au préalable. Il peut être installé avec la commande suivante :</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"remotes"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>The following package(s) will be installed:
-- remotes [2.4.2.1]
-These packages will be installed into "~/Desktop/my_blog/renv/library/R-4.3/x86_64-w64-mingw32".
-
-# Installing packages --------------------------------------------------------
-- Installing remotes ...                        OK [linked from cache]
-Successfully installed 1 package in 11 milliseconds.</code></pre>
 </div>
-</div>
-<p>Une fois que le package <strong><code>remotes</code></strong> est installé, vous pouvez utiliser la commande suivante pour installer <strong><code>olympicsWeather</code></strong> :</p>
+<p>Ensuite, on peut utiliser la commande suivante pour installer <strong><code>olympicsWeather</code></strong> :</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"YavaVilar/olympicsWeather"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"YavaVilar/olympicsWeather"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>La librarie peut être importée de la façon suivante, ce qui permet d’utiliser ses fonctions pour avoir accès aux données météorologiques.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(olympicsWeather)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>La fonction <strong><code>get_forecast</code></strong> est la fonction principale de la librairie. Elle retourne un dataframe avec 5 colonnes relatives à la date et heure, la température, la température ressentie, la probabilité de précipitation et la précipitation effecitve. Ci-dessous, on trouve trois exemples d’implémentation pour le stade de France, le Tahiti et les coordonées géographiques 43.276703, 5.334791. Des graphiques ont été effectués pour visualiser les données sur la période 04/03/2024-10 - 10/03/2024.</p>
 </section>
 </section>
 <section id="prévision-de-la-météo-pour-le-stade-de-france" class="level2">
 <h2 class="anchored" data-anchor-id="prévision-de-la-météo-pour-le-stade-de-france">Prévision de la météo pour le stade de France</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>meteo_stade_france <span class="ot">&lt;-</span> <span class="fu">get_forecast</span>(<span class="st">"stade de France"</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>meteo_stade_france</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>meteo_stade_france</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 168 × 5
    data_heure     temperature_celsius temperature_ressenti…¹ precipitation_proba
@@ -238,9 +223,16 @@ Successfully installed 1 package in 11 milliseconds.</code></pre>
 # ℹ 1 more variable: precipitation &lt;dbl&gt;</code></pre>
 </div>
 </div>
+<p><img src="../..\GRAPHIQUE STADE DE FRANCE.png" class="img-fluid" width="548"></p>
 </section>
 <section id="prévision-de-la-météo-pour-tahiti" class="level2">
 <h2 class="anchored" data-anchor-id="prévision-de-la-météo-pour-tahiti">Prévision de la météo pour Tahiti</h2>
+<p>Le Tahiti organisera les compétitions de surf aux JO 2024.</p>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="images/clipboard-2838439576.png" class="img-fluid figure-img" width="548"></p>
+</figure>
+</div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>meteo_Tahiti <span class="ot">&lt;-</span> <span class="fu">get_forecast</span>(<span class="st">"Tahiti"</span>)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>meteo_Tahiti</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -263,9 +255,20 @@ Successfully installed 1 package in 11 milliseconds.</code></pre>
 # ℹ 1 more variable: precipitation &lt;dbl&gt;</code></pre>
 </div>
 </div>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="../..\GRAPHIQUE TAHITI.png" class="img-fluid figure-img" width="559"></p>
+</figure>
+</div>
 </section>
 <section id="prévision-de-la-météo-pour-les-coordonnées-43.276703-5.334791" class="level2">
 <h2 class="anchored" data-anchor-id="prévision-de-la-météo-pour-les-coordonnées-43.276703-5.334791">Prévision de la météo pour les coordonnées 43.276703, 5.334791</h2>
+<p>Les coordonées 43.276703, 5.334791 correspondent à une adresse située à Marseille, au Sud de la France. Cette ville recevra les épreuves de voile ainsi que 10 matches de tournoi de football.</p>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="images/clipboard-2965428402.png" class="img-fluid figure-img" width="545"></p>
+</figure>
+</div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>meteo_coordonnées <span class="ot">&lt;-</span> <span class="fu">get_forecast</span>(<span class="st">"43.276703,5.334791"</span>)</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>meteo_coordonnées</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -288,6 +291,7 @@ Successfully installed 1 package in 11 milliseconds.</code></pre>
 # ℹ 1 more variable: precipitation &lt;dbl&gt;</code></pre>
 </div>
 </div>
+<p><img src="../..\GRAPHIQUE COORDONEES.png" class="img-fluid" width="553"></p>
 
 
 </section>

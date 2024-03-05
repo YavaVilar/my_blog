@@ -6,6 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Yava Vilar valera">
+<meta name="dcterms.date" content="2024-03-02">
 
 <title>my_blog - Exercices Semaine 2</title>
 <style>
@@ -116,12 +118,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/" rel="" target=""><i class="bi bi-github" role="img">
-</i> 
- <span class="menu-text"></span></a>
-  </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com" rel="" target=""><i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://github.com/YavaVilar" rel="" target=""><i class="bi bi-github" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
@@ -143,7 +140,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
   <div class="quarto-title-meta">
 
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Yava Vilar valera </p>
+            </div>
+    </div>
       
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">March 2, 2024</p>
+      </div>
+    </div>
     
       
     </div>
@@ -157,7 +166,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#td2" id="toc-td2" class="nav-link active" data-scroll-target="#td2">TD2</a></li>
+  <li><a href="#exercices-semaine-2" id="toc-exercices-semaine-2" class="nav-link active" data-scroll-target="#exercices-semaine-2">Exercices Semaine 2</a></li>
   </ul>
 </nav>
     </div>
@@ -167,10 +176,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="td2" class="level2">
-<h2 class="anchored" data-anchor-id="td2">TD2</h2>
-<section id="exercise-1-lancer-la-commande-suivante" class="level4">
-<h4 class="anchored" data-anchor-id="exercise-1-lancer-la-commande-suivante">Exercise 1: Lancer la commande suivante</h4>
+<section id="exercices-semaine-2" class="level2">
+<h2 class="anchored" data-anchor-id="exercices-semaine-2">Exercices Semaine 2</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-767475626.png" class="img-fluid figure-img" width="431"></p>
+</figure>
+</div>
+<p>Ces exercises ont pour but l’iplémentation des fonctions pour analyser les données historiques des jeux olympiques.</p>
+<ul>
+<li><strong>Lancer la commande suivante</strong>. <strong>Que contient l’objet?</strong></li>
+</ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rvest)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(purrr)</span>
@@ -301,9 +317,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>L’objet contient une liste avec 6 éléments contenant différentes bases de données.</p>
-</section>
-<section id="exercise-2-on-sintéresse-à-la-première-table" class="level4">
-<h4 class="anchored" data-anchor-id="exercise-2-on-sintéresse-à-la-première-table">Exercise 2: On s’intéresse à la première table</h4>
+<ul>
+<li><strong>On s’intéresse à la première table. Créer un objet intitulédata_medailles_sport_ete contenant le premier élément de list_tables. La table n’est pas bien formattée. Supprimer la première colonne, les noms de colonnes et la première ligne. Renommer les colonnes en c(“Discipline”, “Annees”, “Editions”, “Epreuves_2020”, “Or”, “Argent”, “Bronze”, “Total”, “Athletes_medailles”, “Athletes_or”). Les colonnes Editions, Epreuves_2020, Or, Argent, Bronze, Total seront converties en colonnes d’entiers.</strong></li>
+</ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Créer data_medailles_sport_ete contenant la première table de la liste </span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -324,9 +340,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>data_medailles_sport_ete[, <span class="dv">3</span><span class="sc">:</span><span class="dv">8</span>] <span class="ot">&lt;-</span> <span class="fu">lapply</span>(data_medailles_sport_ete[, <span class="dv">3</span><span class="sc">:</span><span class="dv">8</span>], as.integer)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="exercise-3-les-3-disciplines-avec-le-plus-de-médailles-distribuées" class="level4">
-<h4 class="anchored" data-anchor-id="exercise-3-les-3-disciplines-avec-le-plus-de-médailles-distribuées">Exercise 3: Les 3 disciplines avec le plus de médailles distribuées</h4>
+<ul>
+<li><strong>Les 3 disciplines avec le plus de médailles distribuées</strong></li>
+</ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
@@ -353,12 +369,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 [26] 30 13 19 27 11</code></pre>
 </div>
 </div>
-</section>
-<section id="exercise-4-les-3-disciplines-avec-le-moins-dépreuves-en-2020" class="level4">
-<h4 class="anchored" data-anchor-id="exercise-4-les-3-disciplines-avec-le-moins-dépreuves-en-2020">Exercise 4: Les 3 disciplines avec le moins d’épreuves en 2020</h4>
+<p>L’athléthisme, la natation et la lutte sont les trois disciplines avec le plus de médailles distribuées.</p>
+<ul>
+<li><strong>Les 3 disciplines avec le moins d’épreuves en 2020</strong></li>
+</ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>data_medailles_sport_ete_ordonne_epreuves2020 <span class="ot">&lt;-</span> data_medailles_sport_ete <span class="sc">|&gt;</span> <span class="fu">arrange</span>(Epreuves_2020) <span class="sc">|&gt;</span> <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>data_medailles_sport_ete_ordonne_epreuves2020 <span class="do">##Sélectionner les 6 dernières</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>data_medailles_sport_ete_ordonne_epreuves2020 <span class="do">##Sélectionner les 3 dernières</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 10
   Discipline Annees             Editions Epreuves_2020    Or Argent Bronze Total
@@ -369,9 +386,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 # ℹ 2 more variables: Athletes_medailles &lt;chr&gt;, Athletes_or &lt;chr&gt;</code></pre>
 </div>
 </div>
-</section>
-<section id="exercise-5-calculer-une-fonction-depuis-qui-représente-depuis-quelle-année-lédition-est-au-programme" class="level4">
-<h4 class="anchored" data-anchor-id="exercise-5-calculer-une-fonction-depuis-qui-représente-depuis-quelle-année-lédition-est-au-programme">Exercise 5: Calculer une fonction depuis qui représente depuis quelle année l’édition est au programme</h4>
+<p>Le football, le golf et le handball ont été les disciplines avec le moins d’épreuves en 2020</p>
+<ul>
+<li><strong>Calculer une fonction depuis qui représente depuis quelle année l’édition est au programme</strong></li>
+</ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>calcul_nb_editions_int <span class="ot">&lt;-</span> <span class="cf">function</span>(depuis) {</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="dv">2024</span><span class="sc">-</span>depuis)</span>
@@ -382,36 +400,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>[1] 128</code></pre>
 </div>
 </div>
-</section>
-<section id="exercise-6-proposez-une-nouvelle-fonction-calcul_nb_editions_str-qui-prendra-cette-fois-ci-en-entrée-des-chaînes-de-caractères" class="level4">
-<h4 class="anchored" data-anchor-id="exercise-6-proposez-une-nouvelle-fonction-calcul_nb_editions_str-qui-prendra-cette-fois-ci-en-entrée-des-chaînes-de-caractères">Exercise 6: Proposez une nouvelle fonction calcul_nb_editions_str qui prendra cette fois-ci en entrée des chaînes de caractères</h4>
-</section>
-<section id="exercice-8" class="level4">
-<h4 class="anchored" data-anchor-id="exercice-8">Exercice 8</h4>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>trouver_max_medaille <span class="ot">&lt;-</span> <span class="cf">function</span>(dataframe, nom_colonne) {</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Vérifier si la colonne existe dans le dataframe</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (nom_colonne <span class="sc">%in%</span> <span class="fu">names</span>(dataframe)) {</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>      max_colonne <span class="ot">&lt;-</span> <span class="fu">max</span>(dataframe[[nom_colonne]])</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>      <span class="fu">return</span>(max_colonne)</span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> {</span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>      <span class="fu">message</span>(<span class="st">"La colonne spécifiée n'existe pas dans le dataframe."</span>)</span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>      <span class="fu">return</span>(<span class="cn">NULL</span>)</span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>max_total <span class="ot">&lt;-</span> <span class="fu">trouver_max_medaille</span>(data_medailles_sport_ete, <span class="st">"Total"</span>)</span>
-<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Le maximum de la colonne 'Total' est :"</span>, max_total))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "Le maximum de la colonne 'Total' est : 3085"</code></pre>
-</div>
-</div>
-</section>
-<section id="exercice-8-1" class="level4">
-<h4 class="anchored" data-anchor-id="exercice-8-1"><strong>Exercice 8</strong></h4>
+<pre><code></code></pre>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
