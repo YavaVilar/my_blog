@@ -77,3 +77,7 @@ meteo_coordonnées
 ```
 
 ![](images/clipboard-3431706594.png){width="671"}
+
+Pour conclure cette section, vous trouverez le code qui m'a permis d'obtenir les données métérologiques en utilisant une demande API, ainsi que le code de création des fonctions de la librairie sur ce lien:
+
+<https://github.com/YavaVilar/olympicsWeather/blob/master/R/get_weather_forecast.R>
