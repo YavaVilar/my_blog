@@ -194,12 +194,4 @@ site_proche_barycentre <- data_ex[which.min(geosphere::distVincentySphere(baryce
 site_proche_barycentre
 ```
 
-Le Stade Tour Eiffel se situe au barycentre de l'ensemble des sites olympiques. Nous pouvons obtenir une visualisation graphique de sa localisation avec le code qui suit:
-
-```{r}
-library(leaflet)
-
-leaflet(data = site_proche_barycentre) |>
-  addTiles() |>
-  addMarkers(~long, ~lat)
-```
+Le Stade Tour Eiffel se situe au barycentre de l'ensemble des sites olympiques.

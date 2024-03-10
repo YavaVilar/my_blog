@@ -37,7 +37,7 @@ La librarie peut être importée de la façon suivante, ce qui permet d'utiliser
 library(olympicsWeather)
 ```
 
-La fonction **`get_forecast`** est la fonction principale de la librairie. Elle retourne un dataframe avec 5 colonnes relatives à la date et heure, la température, la température ressentie, la probabilité de précipitation et la précipitation effective. Ci-dessous, on trouve trois exemples d'implémentation pour le stade de France, le Tahiti et les coordonées géographiques 43.276703, 5.334791. Vous pouvez utiliser la fonction **`get_forecast_visualisation`** pour profiter d'une visualisation graphique et intéractive des données sous R. Dans ce blog, vous trouverez une version statique sur la période 04/03/2024-10 - 10/03/2024.
+La fonction **`get_forecast`** est la fonction principale de la librairie. Elle retourne un dataframe avec 5 colonnes relatives à la date et heure, la température, la température ressentie, la probabilité de précipitation et la précipitation effective. Ci-dessous, on trouve trois exemples d'implémentation pour le stade de France, le Tahiti et les coordonées géographiques 43.276703, 5.334791. Vous pouvez utiliser la fonction **`get_forecast_visualisation`** pour profiter d'une visualisation graphique et intéractive des données sous R. Dans ce blog, vous trouverez une version statique sur la période 04/03/2024 - 10/03/2024.
 
 ## Prévision de la météo pour le stade de France
 
