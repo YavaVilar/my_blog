@@ -1,6 +1,5 @@
 ---
 title: "Exercices Semaine 1"
-theme: "Sports et Infrastructures"
 author: "Yava Vilar Valera"
 date: "03/03/2024"
 ---
@@ -169,7 +168,7 @@ min_distannce
 
 ```
 
-On observe que la distance minimale est de 91.69, identifiée par min_distance. Min_distannce permet d'identifier la ligne et la colonne de la valeur 91.69 au sein de la matrice. Cela correspond aux noms des sites des colonnes 19 et 29 du dataframe data_ex. Stade BMX de Saint-Quentin-en-Yvelines et Vélodrome National de Saint-Quentin-en-Yvelines sont les sites les plus proches.
+On observe que la distance minimale est de 91.69 km, identifiée par min_distance. Min_distannce permet d'identifier la ligne et la colonne de la valeur 91.69 au sein de la matrice. Cela correspond aux noms des sites des colonnes 19 et 29 du dataframe data_ex. Stade BMX de Saint-Quentin-en-Yvelines et Vélodrome National de Saint-Quentin-en-Yvelines sont les sites les plus proches.
 
 -   **Quels sont les sites les plus éloignés**
 
@@ -181,7 +180,7 @@ max_distannce <- which(distances_df==max_distance, arr.ind=TRUE)
 max_distannce
 ```
 
-On observe que Colline d'Elancourt (7) et Stade Nautique (27) sont les sites les plus éloignés avec une distance de 74882.55.
+On observe que Colline d'Elancourt (7) et Stade Nautique (27) sont les sites les plus éloignés avec une distance de 74882.55 km.
 
 -   **Appartement situé au barycentre de l'ensemble des sites olympiques**
 
@@ -195,4 +194,12 @@ site_proche_barycentre <- data_ex[which.min(geosphere::distVincentySphere(baryce
 site_proche_barycentre
 ```
 
-Le Stade Tour Eiffel se situe au barycentre de l'ensemble des sites olympiques.
+Le Stade Tour Eiffel se situe au barycentre de l'ensemble des sites olympiques. Nous pouvons obtenir une visualisation graphique de sa localisation avec le code qui suit:
+
+```{r}
+library(leaflet)
+
+leaflet(data = site_proche_barycentre) |>
+  addTiles() |>
+  addMarkers(~long, ~lat)
+```

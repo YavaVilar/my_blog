@@ -181,12 +181,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="librarie-olympicsweather">Librarie OlympicsWeather</h2>
 <p>Le package <strong><code>olympicsWeather</code></strong> est une librairie de R dédiée à la récupération de prévisions météorologiques en temps réel. Son but dans ce projet est de pévoir la météo des différents sites olympiques qui aurant lieu du 26 juillet au 11 août 2024 pour célébrer les Jeux Olympiques 2024 à Paris. Il offre des fonctionnalités permettant d’obtenir des données détaillées sur les conditions climatiques par heure des 7 prochains jours.</p>
 <section id="installation-du-package" class="level4">
-<h4 class="anchored" data-anchor-id="installation-du-package"><strong>Installation du Package</strong></h4>
-<p>Pour installer le package <strong><code>olympicsWeather</code></strong> depuis GitHub, vous pouvez utiliser le package <strong><code>remotes</code></strong>. Il est nécessaire d’avoir installé le package <strong><code>remotes</code></strong> au préalable. Il peut être installé avec la commande suivante :</p>
+<h4 class="anchored" data-anchor-id="installation-du-package">Installation du Package</h4>
+<p>Pour installer le package <strong><code>olympicsWeather</code></strong> depuis GitHub, vous pouvez utiliser le package <strong><code>remotes</code></strong>. Il est nécessaire d’avoir installé le package <strong><code>remotes</code></strong> au préalable. Il peut être installé avec la commande :</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"remotes"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Ensuite, on peut utiliser la commande suivante pour installer <strong><code>olympicsWeather</code></strong> :</p>
+<p>Ensuite, nous pouvons installer <strong><code>olympicsWeather</code></strong> comme suit:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"YavaVilar/olympicsWeather"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -194,12 +194,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(olympicsWeather)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>La fonction <strong><code>get_forecast</code></strong> est la fonction principale de la librairie. Elle retourne un dataframe avec 5 colonnes relatives à la date et heure, la température, la température ressentie, la probabilité de précipitation et la précipitation effecitve. Ci-dessous, on trouve trois exemples d’implémentation pour le stade de France, le Tahiti et les coordonées géographiques 43.276703, 5.334791. Des graphiques ont été effectués avec la fonction <strong><code>get_forecast_visualisation</code></strong> pour visualiser les données sur la période 04/03/2024-10 - 10/03/2024.</p>
+<p>La fonction <strong><code>get_forecast</code></strong> est la fonction principale de la librairie. Elle retourne un dataframe avec 5 colonnes relatives à la date et heure, la température, la température ressentie, la probabilité de précipitation et la précipitation effective. Ci-dessous, on trouve trois exemples d’implémentation pour le stade de France, le Tahiti et les coordonées géographiques 43.276703, 5.334791. Vous pouvez utiliser la fonction <strong><code>get_forecast_visualisation</code></strong> pour profiter d’une visualisation graphique et intéractive des données sous R. Dans ce blog, vous trouverez une version statique sur la période 04/03/2024-10 - 10/03/2024.</p>
 </section>
 </section>
 <section id="prévision-de-la-météo-pour-le-stade-de-france" class="level2">
 <h2 class="anchored" data-anchor-id="prévision-de-la-météo-pour-le-stade-de-france">Prévision de la météo pour le stade de France</h2>
-<p>Le Stade de France acceuillera la manisfestation sportive des Jeux Olympiques à Paris avec une capacité de 77 083 spectateurs. Le athléthisme, le rugby et le para-athlétisme seront également célébrés.</p>
+<p>Le Stade de France acceuillera la manisfestation sportive des Jeux Olympiques à Paris avec une capacité d’acceuil de 77 083 spectateurs. L’athléthisme, le rugby et le para-athlétisme y seront célébrés.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>meteo_stade_france <span class="ot">&lt;-</span> <span class="fu">get_forecast</span>(<span class="st">"stade de France"</span>)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>meteo_stade_france</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -207,22 +207,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code># A tibble: 168 × 5
    data_heure     temperature_celsius temperature_ressenti…¹ precipitation_proba
    &lt;chr&gt;                        &lt;dbl&gt;                  &lt;dbl&gt;               &lt;int&gt;
- 1 2024-03-05T00…                 7                      4.2                  13
- 2 2024-03-05T01…                 6.9                    4                     9
- 3 2024-03-05T02…                 6.8                    3.8                   4
- 4 2024-03-05T03…                 6.9                    4.2                   0
- 5 2024-03-05T04…                 6.7                    4.2                   1
- 6 2024-03-05T05…                 6.9                    4.8                   2
- 7 2024-03-05T06…                 7.2                    4.7                   3
- 8 2024-03-05T07…                 7.1                    4.4                   2
- 9 2024-03-05T08…                 7.2                    4.4                   1
-10 2024-03-05T09…                 7.8                    4.5                   0
+ 1 2024-03-10T00…                 8                      6.2                  32
+ 2 2024-03-10T01…                 8                      5.4                  27
+ 3 2024-03-10T02…                 7.8                    5.4                  21
+ 4 2024-03-10T03…                 7.9                    5.9                  16
+ 5 2024-03-10T04…                 7.5                    5.6                  21
+ 6 2024-03-10T05…                 7.5                    5.8                  27
+ 7 2024-03-10T06…                 7.5                    5.5                  32
+ 8 2024-03-10T07…                 7.4                    5.8                  32
+ 9 2024-03-10T08…                 7.4                    5                    32
+10 2024-03-10T09…                 7.8                    6.1                  32
 # ℹ 158 more rows
 # ℹ abbreviated name: ¹​temperature_ressentie_celsius
 # ℹ 1 more variable: precipitation &lt;dbl&gt;</code></pre>
 </div>
 </div>
-<p><img src=".\GRAPHIQUE STADE DE FRANCE.png" class="img-fluid" width="756"></p>
+<p><img src="images/clipboard-1004445342.png" class="img-fluid" width="668"></p>
 </section>
 <section id="prévision-de-la-météo-pour-tahiti" class="level2">
 <h2 class="anchored" data-anchor-id="prévision-de-la-météo-pour-tahiti">Prévision de la météo pour Tahiti</h2>
@@ -235,31 +235,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code># A tibble: 168 × 5
    data_heure     temperature_celsius temperature_ressenti…¹ precipitation_proba
    &lt;chr&gt;                        &lt;dbl&gt;                  &lt;dbl&gt;               &lt;int&gt;
- 1 2024-03-05T00…                17.7                   19.1                  42
- 2 2024-03-05T01…                17.6                   18.8                  48
- 3 2024-03-05T02…                17.6                   18.4                  55
- 4 2024-03-05T03…                17.7                   18.6                  61
- 5 2024-03-05T04…                17.8                   18.7                  65
- 6 2024-03-05T05…                17.8                   19                    70
- 7 2024-03-05T06…                17.7                   18.8                  74
- 8 2024-03-05T07…                17.6                   18.3                  83
- 9 2024-03-05T08…                17.6                   18.4                  91
-10 2024-03-05T09…                17.6                   18.5                 100
+ 1 2024-03-10T00…                17.1                   19.4                 100
+ 2 2024-03-10T01…                16.9                   18.5                 100
+ 3 2024-03-10T02…                16.8                   18.6                 100
+ 4 2024-03-10T03…                16.7                   18.5                 100
+ 5 2024-03-10T04…                16.7                   18.1                 100
+ 6 2024-03-10T05…                16.9                   18.2                 100
+ 7 2024-03-10T06…                17.4                   19                   100
+ 8 2024-03-10T07…                17.3                   18.9                  99
+ 9 2024-03-10T08…                17.3                   18.6                  98
+10 2024-03-10T09…                16.9                   18.4                  97
 # ℹ 158 more rows
 # ℹ abbreviated name: ¹​temperature_ressentie_celsius
 # ℹ 1 more variable: precipitation &lt;dbl&gt;</code></pre>
 </div>
 </div>
-<div class="quarto-figure quarto-figure-left">
-<figure class="figure">
-<p><img src=".\GRAPHIQUE TAHITI.png" class="img-fluid figure-img" width="737"></p>
-</figure>
-</div>
+<p><img src="images/clipboard-3396738406.png" class="img-fluid" width="662"></p>
 </section>
 <section id="prévision-de-la-météo-pour-les-coordonnées-43.276703-5.334791" class="level2">
 <h2 class="anchored" data-anchor-id="prévision-de-la-météo-pour-les-coordonnées-43.276703-5.334791">Prévision de la météo pour les coordonnées 43.276703, 5.334791</h2>
 <p>Les coordonées 43.276703, 5.334791 correspondent à une adresse située à Marseille, au Sud de la France. Cette ville recevra les épreuves de voile ainsi que 10 matches de tournoi de football.</p>
-<p><img src="images/clipboard-2965428402.png" class="img-fluid" width="697"></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>meteo_coordonnées <span class="ot">&lt;-</span> <span class="fu">get_forecast</span>(<span class="st">"43.276703,5.334791"</span>)</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>meteo_coordonnées</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -267,22 +262,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code># A tibble: 168 × 5
    data_heure     temperature_celsius temperature_ressenti…¹ precipitation_proba
    &lt;chr&gt;                        &lt;dbl&gt;                  &lt;dbl&gt;               &lt;int&gt;
- 1 2024-03-05T00…                 5.4                    1.6                   0
- 2 2024-03-05T01…                 5.4                    1.6                   1
- 3 2024-03-05T02…                 5.6                    1.8                   2
- 4 2024-03-05T03…                 5.5                    1.7                   3
- 5 2024-03-05T04…                 5.6                    1.7                  13
- 6 2024-03-05T05…                 5.6                    1.8                  22
- 7 2024-03-05T06…                 5.6                    1                    32
- 8 2024-03-05T07…                 5                      1.2                  26
- 9 2024-03-05T08…                 5.9                    1                    19
-10 2024-03-05T09…                 7.1                    1.9                  13
+ 1 2024-03-10T00…                 5.5                    3.6                   3
+ 2 2024-03-10T01…                 5                      3.3                   3
+ 3 2024-03-10T02…                 4.7                    2.6                   3
+ 4 2024-03-10T03…                 4.3                    2.3                   3
+ 5 2024-03-10T04…                 3.9                    1.6                   2
+ 6 2024-03-10T05…                 4.2                    1.8                   1
+ 7 2024-03-10T06…                 3.9                    1.8                   0
+ 8 2024-03-10T07…                 3.5                    1.3                   2
+ 9 2024-03-10T08…                 5.1                    3.2                   4
+10 2024-03-10T09…                 7.9                    6.1                   6
 # ℹ 158 more rows
 # ℹ abbreviated name: ¹​temperature_ressentie_celsius
 # ℹ 1 more variable: precipitation &lt;dbl&gt;</code></pre>
 </div>
 </div>
-<p><img src=".\GRAPHIQUE COORDONEES.png" class="img-fluid" width="743"></p>
+<p><img src="images/clipboard-3431706594.png" class="img-fluid" width="671"></p>
 
 
 </section>

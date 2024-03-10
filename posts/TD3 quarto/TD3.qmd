@@ -111,7 +111,7 @@ tibble_tokyo_athletes <- as_tibble(table_tokyo_athletes)
 
 ```
 
-**Libraires dplyr, tidyr**
+## Libraires dplyr, tidyr
 
 -   **Convertir la colonne Sex en variable catégorielle avec la fonction mutate**
 
@@ -126,7 +126,7 @@ tibble_olympics_athletes <- tibble_olympics_athletes %>% mutate(Sex = as.factor(
 
 ```
 
--   **Créer deux colonnes à partir de la colonne Games**
+-   **Créer deux colonnes à partir de la colonne Games. La première colonne Year sera une colonne de type integer contenant l’année des jeux. La deuxième colonne isSummer sera une colonne booléenne qui indiquera si les jeux sont des jeux d’été ou d’hive**r.
 
 ```{r}
 help("separate_wider_delim")
@@ -134,7 +134,7 @@ help("separate_wider_delim")
 separate_wider_delim(tibble_olympics_athletes, cols = Games, delim= " ", names=c("Year", "isSummer"), cols_remove = FALSE)
 ```
 
--   **Créer deux colonnes à partir de la colonne Games. La première colonne Year sera une colonne de type integer contenant l’année des jeux. La deuxième colonne isSummer sera une colonne booléenne qui indiquera si les jeux sont des jeux d’été ou d’hive**r
+-   **Moyenne d’age des athletes pour chacune des éditions des JO d’été.**
 
 ```{r}
 
@@ -146,7 +146,7 @@ tibble_olympics_athletes %>% group_by(Games) %>%
 
 ```
 
--   **Moyenne d’age des athletes pour chacune des éditions des JO d’été. Edition qui a compté avec les athlètes les plus jeunes ? Les plus vieux ?**
+-   **Edition qui a compté avec les athlètes les plus jeunes ? Les plus vieux ?**
 
 ```{r}
 
@@ -161,7 +161,7 @@ tibble_olympics_athletes %>% group_by(Games) %>%
 
 On observe que l'édition qui a compté avec les athlètes les plus jeunes ont été les jeux d'hiver 1984, tandis que celle avec les plus vieux, les jeux d'été en 1932.
 
--   **Discipline des JO d’été dont la taille des athlètes féminines est la plus grande ? Quelle a été cette discipline au cours de chacune des éditions ? Nombre de fois où chaque discipline a été la discipline avec les plus grandes athlètes**
+-   **Discipline des JO d’été dont la taille des athlètes féminines est la plus grande ?**
 
 ```{r}
 
@@ -170,11 +170,15 @@ tibble_olympics_athletes %>% filter(Sex=="F") %>% arrange(desc(Height)) %>% slic
 
 La discipline dont la taille des athlètes féminines est la plus grande est le basketball.
 
+-   **Quelle a été cette discipline au cours de chacune des éditions ?**
+
 ```{r}
 tibble_olympics_athletes %>% filter(Sex=="F" & !is.na(Height)) %>% group_by(Games) %>% 
   arrange(desc(Height)) %>% slice(1) %>% select(Games, Height, Sport) #On filtre pour les femmes et pour la taille sans valeurs manquantes, puis on calcule la taille plus grande pour chaque game et on sélectionne la colonne du sport correspondant. 
                                                            
 ```
+
+-   **Nombre de fois où chaque discipline a été la discipline avec les plus grandes athlètes**
 
 ```{r}
 
@@ -182,7 +186,7 @@ tibble_olympics_athletes %>% filter(Sex=="F" & !is.na(Height)) %>% group_by(Game
   arrange(desc(Height)) %>% slice(1) %>% select(Games, Height, Sport) %>% pull(Sport) %>% table() #On extrait la colonne sport et fait un tablau de fréquence. 
 ```
 
-**stringr, lubridate**
+## Libraries stringr, lubridate
 
 **On dispose du texte suivant** :
 
@@ -231,14 +235,22 @@ print(dates)
 
 ```{r}
 
+##Différence de jours entre les éditions Rio et Tokyo 
+
 Rio_Tokyo <- difftime(dates[[1]][3], dates[[1]][2], units = "days") #Diff entre le troisième et deuxième élément de la liste dates en jour
 print(Rio_Tokyo)
+
+##Différence de jours entre les éditions Tokyo et Paris
 
 Tokyo_Paris <- difftime(dates[[1]][5], dates[[1]][4], units = "days") #Diff entre le cinquième et sixième élément de la liste dates en jour
 print(Tokyo_Paris)
 
+##Différence de semaines entre les éditions Rio et Tokyo
+
 Rio_Tokyo_semaines <- difftime(dates[[1]][3], dates[[1]][2], units = "weeks") #Diff entre le troisième et deuxième élément de la liste dates en semaines
 print(Rio_Tokyo_semaines)
+
+##Différence de semaines entre les éditions Tokyo et Paris
 
 Tokyo_Paris_semaines <- difftime(dates[[1]][5], dates[[1]][4], units = "weeks") #Diff entre le cinquième et sixième élément de la liste dates en semaines
 print(Tokyo_Paris_semaines)

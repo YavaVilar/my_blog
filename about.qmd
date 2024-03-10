@@ -17,15 +17,15 @@ library(tibble)
 
 Le package **`olympicsWeather`** est une librairie de R dédiée à la récupération de prévisions météorologiques en temps réel. Son but dans ce projet est de pévoir la météo des différents sites olympiques qui aurant lieu du 26 juillet au 11 août 2024 pour célébrer les Jeux Olympiques 2024 à Paris. Il offre des fonctionnalités permettant d'obtenir des données détaillées sur les conditions climatiques par heure des 7 prochains jours.
 
-#### **Installation du Package**
+#### Installation du Package
 
-Pour installer le package **`olympicsWeather`** depuis GitHub, vous pouvez utiliser le package **`remotes`**. Il est nécessaire d'avoir installé le package **`remotes`** au préalable. Il peut être installé avec la commande suivante :
+Pour installer le package **`olympicsWeather`** depuis GitHub, vous pouvez utiliser le package **`remotes`**. Il est nécessaire d'avoir installé le package **`remotes`** au préalable. Il peut être installé avec la commande :
 
 ```{r, eval=FALSE}
 install.packages("remotes")
 ```
 
-Ensuite, on peut utiliser la commande suivante pour installer **`olympicsWeather`** :
+Ensuite, nous pouvons installer **`olympicsWeather`** comme suit:
 
 ```{r, eval=FALSE}
 remotes::install_github("YavaVilar/olympicsWeather")
@@ -37,18 +37,18 @@ La librarie peut être importée de la façon suivante, ce qui permet d'utiliser
 library(olympicsWeather)
 ```
 
-La fonction **`get_forecast`** est la fonction principale de la librairie. Elle retourne un dataframe avec 5 colonnes relatives à la date et heure, la température, la température ressentie, la probabilité de précipitation et la précipitation effecitve. Ci-dessous, on trouve trois exemples d'implémentation pour le stade de France, le Tahiti et les coordonées géographiques 43.276703, 5.334791. Des graphiques ont été effectués avec la fonction **`get_forecast_visualisation`** pour visualiser les données sur la période 04/03/2024-10 - 10/03/2024.
+La fonction **`get_forecast`** est la fonction principale de la librairie. Elle retourne un dataframe avec 5 colonnes relatives à la date et heure, la température, la température ressentie, la probabilité de précipitation et la précipitation effective. Ci-dessous, on trouve trois exemples d'implémentation pour le stade de France, le Tahiti et les coordonées géographiques 43.276703, 5.334791. Vous pouvez utiliser la fonction **`get_forecast_visualisation`** pour profiter d'une visualisation graphique et intéractive des données sous R. Dans ce blog, vous trouverez une version statique sur la période 04/03/2024-10 - 10/03/2024.
 
 ## Prévision de la météo pour le stade de France
 
-Le Stade de France acceuillera la manisfestation sportive des Jeux Olympiques à Paris avec une capacité de 77 083 spectateurs. Le athléthisme, le rugby et le para-athlétisme seront également célébrés.
+Le Stade de France acceuillera la manisfestation sportive des Jeux Olympiques à Paris avec une capacité d'acceuil de 77 083 spectateurs. L'athléthisme, le rugby et le para-athlétisme y seront célébrés.
 
 ```{r}
 meteo_stade_france <- get_forecast("stade de France")
 meteo_stade_france
 ```
 
-![](/GRAPHIQUE%20STADE%20DE%20FRANCE.png){width="756"}
+![](images/clipboard-1004445342.png){width="668"}
 
 ## Prévision de la météo pour Tahiti
 
@@ -63,13 +63,11 @@ meteo_Tahiti
 
 ```
 
-![](/GRAPHIQUE%20TAHITI.png){fig-align="left" width="737"}
+![](images/clipboard-3396738406.png){width="662"}
 
 ## Prévision de la météo pour les coordonnées 43.276703, 5.334791
 
 Les coordonées 43.276703, 5.334791 correspondent à une adresse située à Marseille, au Sud de la France. Cette ville recevra les épreuves de voile ainsi que 10 matches de tournoi de football.
-
-![](images/clipboard-2965428402.png){width="697"}
 
 ```{r}
 
@@ -78,4 +76,4 @@ meteo_coordonnées
 
 ```
 
-![](/GRAPHIQUE%20COORDONEES.png){width="743"}
+![](images/clipboard-3431706594.png){width="671"}

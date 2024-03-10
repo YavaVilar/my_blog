@@ -9,7 +9,7 @@
 <meta name="author" content="Yava Vilar Valera">
 <meta name="dcterms.date" content="2024-03-01">
 
-<title>R avancé et GitHub - Exercices Semaine 3</title>
+<title>Présentation du blog - Exercices Semaine 3</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -97,7 +97,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
-<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -108,7 +107,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
     <a class="navbar-brand" href="../../index.html">
-    <span class="navbar-title">R avancé et GitHub</span>
+    <span class="navbar-title">Présentation du blog</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -116,9 +115,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html" rel="" target="">
+ <span class="menu-text">Prévision de la météorologie</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../R avancé et Git présentation.html" rel="" target="">
+ <span class="menu-text">Cours R avancé et GitHub</span></a>
+  </li>  
+</ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/YavaVilar" rel="" target=""><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/yava-vilar-valera-496999271/" rel="" target=""><i class="bi bi-linkedin" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
@@ -167,6 +181,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#exercises-semaine-3" id="toc-exercises-semaine-3" class="nav-link active" data-scroll-target="#exercises-semaine-3">Exercises Semaine 3</a></li>
+  <li><a href="#libraires-dplyr-tidyr" id="toc-libraires-dplyr-tidyr" class="nav-link" data-scroll-target="#libraires-dplyr-tidyr">Libraires dplyr, tidyr</a></li>
+  <li><a href="#libraries-stringr-lubridate" id="toc-libraries-stringr-lubridate" class="nav-link" data-scroll-target="#libraries-stringr-lubridate">Libraries stringr, lubridate</a></li>
   </ul>
 </nav>
     </div>
@@ -178,12 +194,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="exercises-semaine-3" class="level2">
 <h2 class="anchored" data-anchor-id="exercises-semaine-3">Exercises Semaine 3</h2>
+<p>Ce tutorial se concentre sur l’apprentissage d’importation des fichiers avec des formats permettant de gérer de grandes bases de données. De même, les librairies <strong><code>dplyr, tidyr, string et lubridate</code></strong> seront exploitées pour analyser les informations relatives aux Jeux Olympiques historiques.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/clipboard-1669763147.png" class="img-fluid figure-img" width="442"></p>
 </figure>
 </div>
-<p>Ce tutorial se concentre sur l’apprentissage d’importation des fichiers avec des formats permettant de gérer de grandes bases de données. De même, les librairies <strong><code>dplyr, tidyr, string et lubridate</code></strong> seront exploitées pour analyser les informations relatives aux Jeux Olympiques historiques.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"RSQLite"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -312,7 +328,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Convertir la table en tibble</span></span>
 <span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a>tibble_tokyo_athletes <span class="ot">&lt;-</span> <span class="fu">as_tibble</span>(table_tokyo_athletes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><strong>Libraires dplyr, tidyr</strong></p>
+</section>
+<section id="libraires-dplyr-tidyr" class="level2">
+<h2 class="anchored" data-anchor-id="libraires-dplyr-tidyr">Libraires dplyr, tidyr</h2>
 <ul>
 <li><strong>Convertir la colonne Sex en variable catégorielle avec la fonction mutate</strong></li>
 </ul>
@@ -325,7 +343,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>tibble_olympics_athletes <span class="ot">&lt;-</span> tibble_olympics_athletes <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Sex =</span> <span class="fu">as.factor</span>(Sex))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
-<li><strong>Créer deux colonnes à partir de la colonne Games</strong></li>
+<li><strong>Créer deux colonnes à partir de la colonne Games. La première colonne Year sera une colonne de type integer contenant l’année des jeux. La deuxième colonne isSummer sera une colonne booléenne qui indiquera si les jeux sont des jeux d’été ou d’hive</strong>r.</li>
 </ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">help</span>(<span class="st">"separate_wider_delim"</span>)</span>
@@ -350,7 +368,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <ul>
-<li><strong>Créer deux colonnes à partir de la colonne Games. La première colonne Year sera une colonne de type integer contenant l’année des jeux. La deuxième colonne isSummer sera une colonne booléenne qui indiquera si les jeux sont des jeux d’été ou d’hive</strong>r</li>
+<li><strong>Moyenne d’age des athletes pour chacune des éditions des JO d’été.</strong></li>
 </ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">any</span>(<span class="fu">is.na</span>(tibble_olympics_athletes<span class="sc">$</span>Age)) <span class="co">#Ce code permet de vérifier la présence des NA's au sein de la colonne Age</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -377,7 +395,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <ul>
-<li><strong>Moyenne d’age des athletes pour chacune des éditions des JO d’été. Edition qui a compté avec les athlètes les plus jeunes ? Les plus vieux ?</strong></li>
+<li><strong>Edition qui a compté avec les athlètes les plus jeunes ? Les plus vieux ?</strong></li>
 </ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>tibble_olympics_athletes <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(Games) <span class="sc">%&gt;%</span></span>
@@ -401,7 +419,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>On observe que l’édition qui a compté avec les athlètes les plus jeunes ont été les jeux d’hiver 1984, tandis que celle avec les plus vieux, les jeux d’été en 1932.</p>
 <ul>
-<li><strong>Discipline des JO d’été dont la taille des athlètes féminines est la plus grande ? Quelle a été cette discipline au cours de chacune des éditions ? Nombre de fois où chaque discipline a été la discipline avec les plus grandes athlètes</strong></li>
+<li><strong>Discipline des JO d’été dont la taille des athlètes féminines est la plus grande ?</strong></li>
 </ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>tibble_olympics_athletes <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Sex<span class="sc">==</span><span class="st">"F"</span>) <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(<span class="fu">desc</span>(Height)) <span class="sc">%&gt;%</span> <span class="fu">slice</span>(<span class="dv">1</span>) <span class="sc">%&gt;%</span> <span class="fu">select</span>(Height, Sport) <span class="co">#On filtre les femmes, on ordonne et sélectionne la ligne ainsi que les variables d'intérêt. </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -413,6 +431,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>La discipline dont la taille des athlètes féminines est la plus grande est le basketball.</p>
+<ul>
+<li><strong>Quelle a été cette discipline au cours de chacune des éditions ?</strong></li>
+</ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>tibble_olympics_athletes <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Sex<span class="sc">==</span><span class="st">"F"</span> <span class="sc">&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(Height)) <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(Games) <span class="sc">%&gt;%</span> </span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(Height)) <span class="sc">%&gt;%</span> <span class="fu">slice</span>(<span class="dv">1</span>) <span class="sc">%&gt;%</span> <span class="fu">select</span>(Games, Height, Sport) <span class="co">#On filtre pour les femmes et pour la taille sans valeurs manquantes, puis on calcule la taille plus grande pour chaque game et on sélectionne la colonne du sport correspondant. </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -434,6 +455,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 # ℹ 35 more rows</code></pre>
 </div>
 </div>
+<ul>
+<li><strong>Nombre de fois où chaque discipline a été la discipline avec les plus grandes athlètes</strong></li>
+</ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>tibble_olympics_athletes <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Sex<span class="sc">==</span><span class="st">"F"</span> <span class="sc">&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(Height)) <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(Games) <span class="sc">%&gt;%</span> </span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(Height)) <span class="sc">%&gt;%</span> <span class="fu">slice</span>(<span class="dv">1</span>) <span class="sc">%&gt;%</span> <span class="fu">select</span>(Games, Height, Sport) <span class="sc">%&gt;%</span> <span class="fu">pull</span>(Sport) <span class="sc">%&gt;%</span> <span class="fu">table</span>() <span class="co">#On extrait la colonne sport et fait un tablau de fréquence. </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -451,7 +475,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
                    3 </code></pre>
 </div>
 </div>
-<p><strong>stringr, lubridate</strong></p>
+</section>
+<section id="libraries-stringr-lubridate" class="level2">
+<h2 class="anchored" data-anchor-id="libraries-stringr-lubridate">Libraries stringr, lubridate</h2>
 <p><strong>On dispose du texte suivant</strong> :</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>texte <span class="ot">&lt;-</span> <span class="st">"Les jeux olympiques d’été se déroulent normalement tous les 4 ans, durant les mois de Juillet et Août. Les jeux de Rio ont eu lieu du 5 Août 2016 au 20 Août 2016, ceux de Tokyo du 23 Juillet 2021 au 8 Août 2021, et ceux de Paris auront lieu du 26 Juillet 2024 au 11 Août 2024. Plus de 10000 athlètes sont attendus du monde</span></span>
@@ -505,23 +531,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Combien de jours ont séparés les éditions de Rio et Tokyo ? Et sépareront les éditions de Tokyo et de Paris ? Faites le même calcul en semaines.</strong></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>Rio_Tokyo <span class="ot">&lt;-</span> <span class="fu">difftime</span>(dates[[<span class="dv">1</span>]][<span class="dv">3</span>], dates[[<span class="dv">1</span>]][<span class="dv">2</span>], <span class="at">units =</span> <span class="st">"days"</span>) <span class="co">#Diff entre le troisième et deuxième élément de la liste dates en jour</span></span>
-<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(Rio_Tokyo)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="do">##Différence de jours entre les éditions Rio et Tokyo </span></span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>Rio_Tokyo <span class="ot">&lt;-</span> <span class="fu">difftime</span>(dates[[<span class="dv">1</span>]][<span class="dv">3</span>], dates[[<span class="dv">1</span>]][<span class="dv">2</span>], <span class="at">units =</span> <span class="st">"days"</span>) <span class="co">#Diff entre le troisième et deuxième élément de la liste dates en jour</span></span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(Rio_Tokyo)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Time difference of 1798 days</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>Tokyo_Paris <span class="ot">&lt;-</span> <span class="fu">difftime</span>(dates[[<span class="dv">1</span>]][<span class="dv">5</span>], dates[[<span class="dv">1</span>]][<span class="dv">4</span>], <span class="at">units =</span> <span class="st">"days"</span>) <span class="co">#Diff entre le cinquième et sixième élément de la liste dates en jour</span></span>
-<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(Tokyo_Paris)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="do">##Différence de jours entre les éditions Tokyo et Paris</span></span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>Tokyo_Paris <span class="ot">&lt;-</span> <span class="fu">difftime</span>(dates[[<span class="dv">1</span>]][<span class="dv">5</span>], dates[[<span class="dv">1</span>]][<span class="dv">4</span>], <span class="at">units =</span> <span class="st">"days"</span>) <span class="co">#Diff entre le cinquième et sixième élément de la liste dates en jour</span></span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(Tokyo_Paris)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Time difference of 1083 days</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>Rio_Tokyo_semaines <span class="ot">&lt;-</span> <span class="fu">difftime</span>(dates[[<span class="dv">1</span>]][<span class="dv">3</span>], dates[[<span class="dv">1</span>]][<span class="dv">2</span>], <span class="at">units =</span> <span class="st">"weeks"</span>) <span class="co">#Diff entre le troisième et deuxième élément de la liste dates en semaines</span></span>
-<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(Rio_Tokyo_semaines)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="do">##Différence de semaines entre les éditions Rio et Tokyo</span></span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>Rio_Tokyo_semaines <span class="ot">&lt;-</span> <span class="fu">difftime</span>(dates[[<span class="dv">1</span>]][<span class="dv">3</span>], dates[[<span class="dv">1</span>]][<span class="dv">2</span>], <span class="at">units =</span> <span class="st">"weeks"</span>) <span class="co">#Diff entre le troisième et deuxième élément de la liste dates en semaines</span></span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(Rio_Tokyo_semaines)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Time difference of 256.8571 weeks</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>Tokyo_Paris_semaines <span class="ot">&lt;-</span> <span class="fu">difftime</span>(dates[[<span class="dv">1</span>]][<span class="dv">5</span>], dates[[<span class="dv">1</span>]][<span class="dv">4</span>], <span class="at">units =</span> <span class="st">"weeks"</span>) <span class="co">#Diff entre le cinquième et sixième élément de la liste dates en semaines</span></span>
-<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(Tokyo_Paris_semaines)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="do">##Différence de semaines entre les éditions Tokyo et Paris</span></span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>Tokyo_Paris_semaines <span class="ot">&lt;-</span> <span class="fu">difftime</span>(dates[[<span class="dv">1</span>]][<span class="dv">5</span>], dates[[<span class="dv">1</span>]][<span class="dv">4</span>], <span class="at">units =</span> <span class="st">"weeks"</span>) <span class="co">#Diff entre le cinquième et sixième élément de la liste dates en semaines</span></span>
+<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(Tokyo_Paris_semaines)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Time difference of 154.7143 weeks</code></pre>
 </div>
